@@ -26,8 +26,8 @@ p {
 }
 
 hr {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 25px;
+    margin-bottom: 25px;
     border-color: #f5f1f1;
     border-style: none;
     border-top-style: dotted;
@@ -40,21 +40,21 @@ hr {
     background-color: #FFF3E2;
     position: relative;
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
 }
 
 .middle-container {
     background-color: #FFE5CA;
     position: relative;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .bottom-container {
     background-color: #FA9884;
     position: relative;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 30px;
+    padding-bottom: 10px;
 }
 
 /****************** ITEMS ******************/
@@ -146,8 +146,8 @@ hr {
 
 /****************** SKILLS ******************/
 .skills-icon{
-    width: 30%;
-    max-width: 200px;
+    width: 20%;
+    max-width: 100px;
 }
 
 .skills-header {
@@ -377,10 +377,6 @@ hr {
   }
   
 /****************** Contact ******************/
-
-.bottom-container{
-    padding-bottom: 50px;
-}
 
 .communicate {
     width: 100px;
