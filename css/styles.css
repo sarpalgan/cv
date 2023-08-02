@@ -262,9 +262,10 @@ hr {
     background-color: #ffffffb7;
 }
 
+/* Default styles for .skills-card-img-wrapper_small */
 .skills-card-img-wrapper_small {
     display: flex;
-    width: auto; /* Set the width to auto */
+    width: auto;
     max-height: 50px;
     margin: 10px auto;
     position: relative;
@@ -272,16 +273,38 @@ hr {
     box-sizing: inherit;
 }
 
+/* Default styles for .skills-card-img_small */
 .skills-card-img_small {
     height: 50px;
-    width: 100%; /* Set width to 100% to fill the container */
-    object-fit: contain; /* Preserve the image's aspect ratio */
+    width: 100%;
+    object-fit: contain;
     border: 0;
     margin: 0;
     padding: 0;
     box-sizing: inherit;
+    transition: transform 0.5s ease; /* Add a smooth transition for the transform property */
 }
 
+/*
+.skills-card-img_small-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg);
+    visibility: hidden;
+    width: 100%;
+    height: 50px;
+    object-fit: contain;
+}
+
+#specific-skills-card:hover .skills-card-img_small {
+    visibility: hidden;
+}
+
+#specific-skills-card:hover .skills-card-img_small-hover {
+    visibility: visible;
+} 
+*/
 
 .skills-card-content-wrapper_small {
     align-items: center;
@@ -374,3 +397,8 @@ hr {
     margin-right: 10px; /* Optional: Add some spacing between the image and paragraph */
     max-width: 30px; /* Set the maximum width for the image */
 }
+
+
+
+
+ 
