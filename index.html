@@ -1,356 +1,400 @@
-<!DOCTYPE html>
-<html lang="en">
+body {
+    position: absolute;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+    margin: 0;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
 
-<head>
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarp Algan</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="images/einstein.png">
-</head>
+h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 50px;
+}
 
-<body>
+h3 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
 
-    <div class="top-container">
-        <img class="pp" src="images/sarp.jpg" alt="my-profile-pic">
-        <h2>Hello</h2>
-        <p>I'm Sarp</p>
+p {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
 
-    </div>
+hr {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-color: #f5f1f1;
+    border-style: none;
+    border-top-style: dotted;
+    border-width: 5px;
+    width: 80%;
+}
 
-    <div class="middle-container">
+/****************** CONTAINERS ******************/
+.top-container {
+    background-color: #FFF3E2;
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
 
-        <div class="grid-container">
+.middle-container {
+    background-color: #FFE5CA;
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
 
-            <div class="grid-item">
-                
-                <img src="images/education.png" class=skills-icon alt="education">
-                <h2 class="skills-header-content">
-                        Education
-                </h2>
+.bottom-container {
+    background-color: #FA9884;
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
 
-                <div class="skills-card_small">
-                    <div class="skills-card-img-wrapper_small">
-                        <img alt="" class="skills-card-img_small" src="images/unimib.png">
-                    </div>
-                    <div class="skills-card-content-wrapper_small">
-                        <p class="skills-card-content_small">
-                            <b>Università degli Studi di<br>Milano-Bicocca</b><br>MSc. Artificial Intelligence for Science and Technology<br>2023-Still
-                        </p>
-                    </div>
+/****************** ITEMS ******************/
+.phys {
+    text-decoration: underline;
+}
 
-                    <br>
+.mountain {
+    width: 50%;
+}
 
-                    <div class="skills-card-img-wrapper_small">
-                        <img alt="" class="skills-card-img_small" src="images/metu.png">
-                    </div>
-                    <div class="skills-card-content-wrapper_small">
-                        <p class="skills-card-content_small">
-                            <b>Middle East Technical University</b><br>BSc. Physics<br>2015-2021<br>GPA: 3.06 / 4.00
-                        </p>
-                    </div>
+.top-cloud {
+    position: absolute;
+    right: 30%;
+    top: 50px;
+}
 
-                    <br>
+.bottom-cloud {
+    position: absolute;
+    left: 30%;
+}
 
-                    <div id="specific-skills-card" class="skills-card-img-wrapper_small">
-                        <img alt="" class="skills-card-img_small" src="images/report.png">
-                        <!-- <img alt="" class="skills-card-img_small skills-card-img_small-hover" src="images/report-inspect.png"> -->
-                    </div>
-                    <div class="skills-card-content-wrapper_small">
-                        <p class="skills-card-content_small">
-                            <b>BSc. Thesis</b>
-                            <br><em>Comparison of Classical and Quantum Support Vector Machines for Classification</em>
-                            <br>Algan S., Tüysüz C., Demirköz M.B.
-                            <br>August 2021
-                            <br>
-                            <br><small> Acknowledgements
-                            <br><small>
-                            This work is supported by The Research and Application Center for Space and Accelerator Technologies (IVMER), and The Turkish Academy
-                            of Sciences (TÜBA).</small><br>
-                            <br><a href="https://drive.google.com/file/d/1KJ9UeTxKpa9qoE0qwRvv9WMsoRDZe4ho/view?usp=sharing" target="_blank">
-                                <em>Click here to view the thesis</em></a> </small>
-                        </p>
-                    </div>
-                </div>
-            </div>
+.pp {
+    border-radius: 10% 50% 50%;
+    width: 20%;
+}
 
-            <div class="grid-item">
-                                 
-                <img src="images/briefcase.png" class=skills-icon alt="education">
-                <h2 class="skills-header-content">
-                        Work History
-                </h2>
-
-                <div class="skills-card_small">
-                    <div class="skills-card-img-wrapper_small">
-                        <img alt="" class="skills-card-img_small" src="images/Egemenyazlmlogo2.png">
-                    </div>
-                    <div class="skills-card-content-wrapper_small">
-                        <p class="skills-card-content_small">
-                            <b>Egemen Software</b>
-                            <br>Machine Learning Engineer
-                            <br>Full Time
-                            <br>Jul 2022 - Still
-                        </p>
-                    </div>
-                </div>
-
-                <br>
-                <div class="skills-card_small">
-                    <div class="skills-card-img-wrapper_small">
-                        <img alt="" class="skills-card-img_small" src="images/labomak-logo2.png">
-                    </div>
-                    <div class="skills-card-content-wrapper_small">
-                        <p class="skills-card-content_small">
-                            <b>Labomak Makine</b> 
-                            <br>Research And Development Engineer
-                            <br>Full Time 
-                            <br>Dec 2021 - Jun 2022
-                        </p>
-                    </div>
-                </div>
-
-                <br>
-                <div class="skills-card_small">
-                    <div class="skills-card-img-wrapper_small">
-                        <img alt="" class="skills-card-img_small" src="images/ivmer_logo.png">
-                    </div>
-                    <div class="skills-card-content-wrapper_small">
-                        <p class="skills-card-content_small">
-                            <b>ODTÜ(METU) İvmer</b> 
-                            <br>Quantum Machine Learning Reseacher
-                            <br>Intern 
-                            <br>Mar 2021 - Dec 2021
-                        </p>
-                    </div>
-                </div>
-
-                <br>
-                <div class="skills-card_small">
-                    <div class="skills-card-img-wrapper_small">
-                        <img alt="" class="skills-card-img_small" src="images/TAEK.png">
-                    </div>
-                    <div class="skills-card-content-wrapper_small">
-                        <p class="skills-card-content_small">
-                            <b>Turkish Atomic Energy Authority</b> 
-                            <br>Research Physicist
-                            <br>Intern 
-                            <br>Nov 2021 - Dec 2021
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        
-
-        <!--    SKILLS    -->
-        <hr>
+/****************** EDUCATION & WORK ******************/
 
 
-        <div class="skills-header">
-            <img src="images/programing.png" class=skills-icon alt="Skills">
-            <h2 class="skills-header-content">
-                Skills
-            </h2>
-        </div>
+.education-details {
+    display: flex;
+    align-items: baseline;
+    margin: 0 auto;
+    max-width: 80%;
+}
+  
+.education-details img {
+    max-width: 120px;
+    height: auto;
+    align-self: center;
+}
+
+.education-details p {
+    margin: 0 10px;
+}
+
+.education-details .details img {
+    max-width: 100px;
+    max-height: 100px;
+}
+  
+.education-details .details {
+    flex-grow: 1;
+    height: 100%;
+}
+
+.education-details .reverse img{
+    margin-left: 20px;
+}
+  
+@media (max-width: 768px) {
+    .education-details {
+      flex-direction: column;
+      
+    }
+
+    .education-details .reverse{
+        flex-direction: column-reverse;
+    }
+   
+    .education-details .details {
+      margin-top: 20px;
+      align-self: center;
+    }
+}
+  
 
 
-        <!--    skills_large    -->
-        <div class="skills_large">
-            <div class="skills-card_large">
-                <div class="skills-card-img-wrapper_large">
-                    <img alt="" class="skills-card-img_large" src="images/ml.png">
-                </div>
-                <div class="skills-card-content-wrapper_large">
-                    <p class="skills-card-content_large">
-                        Machine Learning
-                    </p>
-                </div>
-            </div>
 
-            <div class="skills-card_large">
-                <div class="skills-card-img-wrapper_large">
-                    <img alt="" class="skills-card-img_large" src="images/vision.png">
-                </div>
-                <div class="skills-card-content-wrapper_large">
-                    <p class="skills-card-content_large">
-                        Computer Vision
-                    </p>
-                </div>
-            </div>
+.metu-logo{
+    width: 30%;
+    max-width: 200px;
+}
 
-            <div class="skills-card_large">
-                <div class="skills-card-img-wrapper_large">
-                    <img alt="" class="skills-card-img_large" src="images/atom.png">
-                </div>
-                <div class="skills-card-content-wrapper_large">
-                    <p class="skills-card-content_large">
-                        Physics
-                    </p>
-                </div>
-            </div>
-        </div>
+.description1{
+    width: 100%;   
+}
 
-        <!--    skills_small    -->
-        <div class="skills_small">
-            <div class="skills-card_small">
-                <div class="skills-card-img-wrapper_small">
-                    <img alt="" class="skills-card-img_small" src="images/python.png">
-                </div>
-                <div class="skills-card-content-wrapper_small">
-                    <p class="skills-card-content_small">
-                        Python
-                    </p>
-                </div>
-            </div>
+/****************** SKILLS ******************/
+.skills-icon{
+    width: 20%;
+    max-width: 100px;
+}
 
-            <div class="skills-card_small">
-                <div class="skills-card-img-wrapper_small">
-                    <img alt="" class="skills-card-img_small" src="images/Tensorflow_logo.png">
-                </div>
-                <div class="skills-card-content-wrapper_small">
-                    <p class="skills-card-content_small">
-                        Tensorflow
-                    </p>
-                </div>
-            </div>
+.skills-header {
+    margin: 0 auto;
+    text-align: center;
+    padding: 0;
+    box-sizing: inherit;
+    display: block;
+}
 
-            <div class="skills-card_small">
-                <div class="skills-card-img-wrapper_small">
-                    <img alt="" class="skills-card-img_small" src="images/opencv.png">
-                </div>
-                <div class="skills-card-content-wrapper_small">
-                    <p class="skills-card-content_small">
-                        OpenCV
-                    </p>
-                </div>
-            </div>
+/****************** skills large ******************/
+.skills_large {
+    display: flex;
+    margin: 20px auto;
+    max-width: 85%;
+    justify-content: space-between;
+}
 
-            <div class="skills-card_small">
-                <div class="skills-card-img-wrapper_small">
-                    <img alt="" class="skills-card-img_small" src="images/sklearn.png">
-                </div>
-                <div class="skills-card-content-wrapper_small">
-                    <p class="skills-card-content_small">
-                        Scikit-learn
-                    </p>
-                </div>
-            </div>
+.skills-card_large {
+    flex-direction: column;
+    align-items: center;
+    padding-right: 0;
+    flex-basis: calc(100% / 3 - 100% / 12);
+    border: 3px solid #fff;
+    border-radius: 8px;
+    background-color: #FFF3E2; 
+    gap: 0px;
+    max-width: 100%;
+    margin: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 0;
+}
 
-            <div class="skills-card_small">
-                <div class="skills-card-img-wrapper_small">
-                    <img alt="" class="skills-card-img_small" src="images/figma.png">
-                </div>
-                <div class="skills-card-content-wrapper_small">
-                    <p class="skills-card-content_small">
-                        Figma
-                    </p>
-                </div>
-            </div>
-        </div>
+.skills-card_large:hover {
+    background-color: #ffffffb7;
+}
 
-        <!--    CERTIFICATES    -->     
-        <hr>
-        <div class="skills-header">
-            <img src="images/certificate.png" class=skills-icon alt="certificates">
-            <h2 class="skills-header-content">
-                Certificates
-            </h2>
-        </div>
-        <div class="grid-container">
+.skills-card-img-wrapper_large {
+    display: flex;
+    width: 100%;
+    max-width: 120px;
+    margin: 15px auto;
+    position: relative;
+    padding: 0;
+    box-sizing: inherit;
+}
 
-            <!--Advanced Computer Vision with Tensorflow-->
-            <div class="grid-item">
-                <a href="https://www.coursera.org/account/accomplishments/certificate/22RWC74X5B8R" target="_blank">
-                  <img src="pdfs/advanced_computer_vision_with_tensorflow-1.png" alt="Certificate 1">
-                </a>
-                <div class="description">Advanced Computer Vision with Tensorflow</div>
-            </div>
+.skills-card-img_large {
+    height: auto;
+    max-width: 100%;
+    width: auto;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    overflow: clip;
+    overflow-clip-margin: content-box;
+}
 
-            <!--Improving Deep Neural Networks-->
-            <div class="grid-item">
-                <a href="https://www.coursera.org/account/accomplishments/certificate/243QYJJ84524" target="_blank">
-                  <img src="pdfs/ImprovingDeepNeuralNetworks-1.png" alt="Certificate 1">
-                </a>
-                <div class="description">Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</div>
-            </div>
-            <!--The Ultimate MySQL Bootcamp Go from SQL Beginner to Expert-->
-            <div class="grid-item">
-                <a href="https://www.udemy.com/certificate/UC-7e635cc2-6d4c-46b9-af94-ec1db52c5895/" target="_blank">
-                  <img src="pdfs/The Ultimate MySQL Bootcamp Go from SQL Beginner to Expert.jpg" alt="Certificate 1">
-                </a>
-                <div class="description">The Ultimate MySQL Bootcamp Go from SQL Beginner to Expert</div>
-            </div>
+.skills-card-content-wrapper_large {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 16px 0;
+    align-self: center;
+    flex-basis: auto;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    position: relative;
+    word-wrap: break-word;
+    box-sizing: inherit;
+}
 
-            <!--Unsupervised Learning, Recommenders, Reinforcement Learning-->
-            <div class="grid-item">
-                <a href="https://www.coursera.org/account/accomplishments/certificate/AJE9WGNDCAJS" target="_blank">
-                  <img src="pdfs/Unsupervised Learning, Recommenders, Reinforcement Learning-1.png" alt="Certificate 1">
-                </a>
-                <div class="description">Unsupervised Learning, Recommenders, Reinforcement Learning</div>
-            </div>
+.skills-card-content_large {
+    text-align: center;
+    letter-spacing: -0.25px;
+    max-width: 680px;
+    margin: 0;
+    box-sizing: inherit;
+    display: block;
+    word-wrap: break-word;
+}
 
-            <!--Convolutional Neural Networks-->
-            <div class="grid-item">
-                <a href="https://www.coursera.org/account/accomplishments/certificate/7H66USWK2MX7" target="_blank">
-                  <img src="pdfs/Convolutional Neural Networks-1.png" alt="Certificate 1">
-                </a>
-                <div class="description">Convolutional Neural Networks</div>
-            </div>
+/****************** skills small ******************/
 
-            <!--Python for Data Science and Machine Learning Bootcamp-->
-            <div class="grid-item">
-                <a href="https://www.udemy.com/certificate/UC-2e2c6264-c1bd-42e8-ab59-5ea03ca38b85/" target="_blank">
-                  <img src="pdfs/Python for Data Science and Machine Learning Bootcamp.jpg" alt="Certificate 1">
-                </a>
-                <div class="description">Python for Data Science and Machine Learning Bootcamp</div>
-            </div>
+.skills_small {
+    display: flex;
+    margin: auto;
+    max-width: 85%;
+    justify-content: space-between;
+}
 
-            <!--Machine Learning-->
-            <div class="grid-item">
-                <a href="https://www.coursera.org/account/accomplishments/certificate/ZBJMNZMNVAK5" target="_blank">
-                  <img src="pdfs/Machine-Learning.png" alt="Certificate 1">
-                </a>
-                <div class="description">Machine Learning</div>
-            </div>
+.skills-card_small {
+    flex-direction: column;
+    align-items: center;
+    padding-right: 0;
+    flex-basis: calc(100% / 5 - 30px);
+    border: 2px solid #fff;
+    border-radius: 8px;
+    background-color: #FFF3E2;
+    gap: 0px;
+    max-width: 100%;
+    margin: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 0;
+}
 
-            <!--LFS101x: Introduction to Linux-->
-            <div class="grid-item">
-                <a href="https://courses.edx.org/certificates/aca2ca8f5de04bdf98dcee5de426bde7" target="_blank">
-                  <img src="pdfs/edX-LinuxFoundationX-LFS101x-Sertifikası (1).png" alt="Certificate 1">
-                </a>
-                <div class="description">LFS101x: Introduction to Linux</div>
-            </div>
+.skills-card_small:hover {
+    background-color: #ffffffb7;
+}
 
-            <!--PY0101EN: Python Basics for Data Science-->
-            <div class="grid-item">
-                <a href="https://courses.edx.org/certificates/b5a1259b2f494af180ef019a21db97fb" target="_blank">
-                  <img src="pdfs/Python-Basics-for-Data-Science.png" alt="Certificate 1">
-                </a>
-                <div class="description">PY0101EN: Python Basics for Data Science</div>
-            </div>
+/* Default styles for .skills-card-img-wrapper_small */
+.skills-card-img-wrapper_small {
+    display: flex;
+    width: auto;
+    max-height: 50px;
+    margin: 10px auto;
+    position: relative;
+    padding: 0;
+    box-sizing: inherit;
+}
 
-          </div>
-    </div>
+/* Default styles for .skills-card-img_small */
+.skills-card-img_small {
+    height: 50px;
+    width: 100%;
+    object-fit: contain;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    transition: transform 0.5s ease; /* Add a smooth transition for the transform property */
+}
 
-    <div class="bottom-container">
-        <img class="communicate" src="images/communicate.png" alt="communicate">
-        <h2>Contact Me!</h2>
+/*
+.skills-card-img_small-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg);
+    visibility: hidden;
+    width: 100%;
+    height: 50px;
+    object-fit: contain;
+}
 
-        <div class="contact">
-            <img src="images/email.png" alt="email" class="contact-img">
-            <p>sarpalgan@gmail.com</p>
-        </div>        
+#specific-skills-card:hover .skills-card-img_small {
+    visibility: hidden;
+}
 
-        <div class="contact">
-            <a href="https://www.linkedin.com/in/sarp-algan-6ab8201b9/" target="_blank">
-            <img src="images/linkedin.png" alt="Linked-in" class="contact-img"></a>
+#specific-skills-card:hover .skills-card-img_small-hover {
+    visibility: visible;
+} 
+*/
 
-            <a href="https://www.instagram.com/sarpalgan/" target="_blank">
-                <img src="images/instagram.png" alt="Instagram" class="contact-img"></a>
-        </div>
-    </div>
-    
-</body>
+.skills-card-content-wrapper_small {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 12px 0;
+    align-self: center;
+    flex-basis: auto;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    position: relative;
+    word-wrap: break-word;
+    box-sizing: inherit;
+}
 
-</html>
+.skills-card-content_small {
+    text-align: center;
+    letter-spacing: -0.25px;
+    max-width: 680px;
+    margin: 0;
+    box-sizing: inherit;
+    display: block;
+    word-wrap: break-word;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/****************** Certificates ******************/
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    width: 85%;
+    margin: 0 auto;
+     /* margin: 0 20px; add left and right margins of 20px */
+  }
+  
+  .grid-item {
+    position: relative; /* add position relative to position the description element */
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .grid-item img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .description {
+    position: absolute; /* position the description element */
+    top: 0px; /* align the element to the top of the grid item */
+    width: 100%;
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out; /* add a transition effect to the opacity */
+  }
+  
+  .grid-item:hover {
+    opacity: 0.9;
+  }
+  
+  .grid-item:hover .description {
+    opacity: 1; /* show the description element on hover */
+  }
+  
+/****************** Contact ******************/
+
+.communicate {
+    width: 100px;
+}
+
+.contact {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    padding: 5px 0 5px 0;
+}
+
+.contact-img {
+    margin-right: 10px; /* Optional: Add some spacing between the image and paragraph */
+    max-width: 30px; /* Set the maximum width for the image */
+}
+
+
+
+
+ 
