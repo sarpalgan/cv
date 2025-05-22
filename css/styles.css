@@ -1,400 +1,370 @@
+/* Import Roboto font (example, actual import might be done in HTML or another way if this doesn't work directly in CSS for the environment) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
 body {
-    position: absolute;
-    top:0px;
-    right:0px;
-    bottom:0px;
-    left:0px;
+    position: relative; /* Changed from absolute to allow content to define flow */
     margin: 0;
+    padding: 0; /* Added padding 0 for consistency */
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    background-color: #1a1a1a; /* Dark gray background */
+    color: #e0e0e0; /* Light gray text */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 40px; /* Adjusted padding */
+    color: #ffffff; /* White headings */
 }
 
 h1 {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 50px;
+    font-size: 2.5em; /* Example size */
+    padding-top: 60px;
+}
+
+h2 {
+    font-size: 2em; /* Example size */
+    padding-bottom: 20px; /* Space below h2 */
 }
 
 h3 {
-    margin-top: 16px;
-    margin-bottom: 16px;
+    font-size: 1.5em; /* Example size */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #00ffff; /* Accent color for H3 */
 }
 
 p {
-    margin-bottom: 0px;
+    margin-bottom: 16px; /* Added some bottom margin */
     margin-top: 0px;
+    line-height: 1.6; /* Improved readability */
 }
 
 hr {
-    margin-top: 25px;
-    margin-bottom: 25px;
-    border-color: #f5f1f1;
-    border-style: none;
-    border-top-style: dotted;
-    border-width: 5px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-color: rgba(0, 255, 255, 0.3); /* Muted accent color */
+    border-style: solid; /* Changed from dotted */
+    border-width: 1px; /* Thinner line */
     width: 80%;
 }
 
-/****************** CONTAINERS ******************/
-.top-container {
-    background-color: #FFF3E2;
-    position: relative;
-    padding-top: 50px;
-    padding-bottom: 30px;
+a {
+    color: #00ffff; /* Accent color for links */
+    text-decoration: none; /* Remove underline by default */
 }
 
-.middle-container {
-    background-color: #FFE5CA;
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #80ffff; /* Lighter accent on hover */
+}
+
+/****************** CONTAINERS ******************/
+/* Remove old distinct background colors, allow body background to show */
+.top-container,
+.middle-container,
+.bottom-container {
     position: relative;
     padding-top: 30px;
     padding-bottom: 30px;
+    width: 100%; /* Ensure they take full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.top-container {
+    padding-top: 50px; /* Keep more padding for the top */
 }
 
 .bottom-container {
-    background-color: #FA9884;
-    position: relative;
-    padding-top: 30px;
-    padding-bottom: 10px;
+    background-color: #111111; /* Slightly different dark for footer area */
+    padding-top: 40px;
+    padding-bottom: 20px;
+    margin-top: 30px; /* Add margin to separate from content above */
 }
+
 
 /****************** ITEMS ******************/
 .phys {
-    text-decoration: underline;
+    /* text-decoration: underline; (removed as links handle this) */
+    color: #00ffff; /* Example if it needs to stand out */
 }
 
-.mountain {
-    width: 50%;
-}
-
-.top-cloud {
-    position: absolute;
-    right: 30%;
-    top: 50px;
-}
-
+/* Remove cloud images as they might not fit the new theme */
+.top-cloud,
 .bottom-cloud {
-    position: absolute;
-    left: 30%;
+    display: none;
 }
 
-.pp {
-    border-radius: 10% 50% 50%;
-    width: 20%;
+.pp { /* Profile Picture */
+    border-radius: 50%; /* Circular profile picture */
+    width: 180px; /* Adjusted size */
+    height: 180px;
+    object-fit: cover; /* Ensure aspect ratio is maintained */
+    border: 3px solid #00ffff; /* Accent color border */
+    margin-bottom: 20px; /* Space below picture */
 }
 
 /****************** EDUCATION & WORK ******************/
-
-
-.education-details {
-    display: flex;
-    align-items: baseline;
+.grid-container { /* This is used for Education/Work and Certificates */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 30px; /* Increased gap */
+    width: 90%; /* Adjusted width */
     margin: 0 auto;
-    max-width: 80%;
-}
-  
-.education-details img {
-    max-width: 120px;
-    height: auto;
-    align-self: center;
+    padding-bottom: 30px; /* Add some padding at the bottom of the grid */
 }
 
-.education-details p {
-    margin: 0 10px;
-}
-
-.education-details .details img {
-    max-width: 100px;
-    max-height: 100px;
-}
-  
-.education-details .details {
-    flex-grow: 1;
-    height: 100%;
-}
-
-.education-details .reverse img{
-    margin-left: 20px;
-}
-  
-@media (max-width: 768px) {
-    .education-details {
-      flex-direction: column;
-      
-    }
-
-    .education-details .reverse{
-        flex-direction: column-reverse;
-    }
-   
-    .education-details .details {
-      margin-top: 20px;
-      align-self: center;
-    }
-}
-  
-
-
-
-.metu-logo{
-    width: 30%;
-    max-width: 200px;
-}
-
-.description1{
-    width: 100%;   
-}
-
-/****************** SKILLS ******************/
-.skills-icon{
-    width: 20%;
-    max-width: 100px;
-}
-
-.skills-header {
-    margin: 0 auto;
-    text-align: center;
-    padding: 0;
-    box-sizing: inherit;
-    display: block;
-}
-
-/****************** skills large ******************/
-.skills_large {
-    display: flex;
-    margin: 20px auto;
-    max-width: 85%;
-    justify-content: space-between;
-}
-
-.skills-card_large {
-    flex-direction: column;
-    align-items: center;
-    padding-right: 0;
-    flex-basis: calc(100% / 3 - 100% / 12);
-    border: 3px solid #fff;
+/* Styling for individual cards within the education/work grid items */
+.skills-card_small { /* Re-using this class, but will need specific styling for education/work items */
+    background-color: #2a2a2a; /* Darker card background */
+    border: 1px solid #003333; /* Darker accent border */
     border-radius: 8px;
-    background-color: #FFF3E2; 
-    gap: 0px;
-    max-width: 100%;
-    margin: 0;
-    flex-grow: 0;
-    flex-shrink: 0;
-    padding: 0;
-}
-
-.skills-card_large:hover {
-    background-color: #ffffffb7;
-}
-
-.skills-card-img-wrapper_large {
-    display: flex;
-    width: 100%;
-    max-width: 120px;
-    margin: 15px auto;
-    position: relative;
-    padding: 0;
-    box-sizing: inherit;
-}
-
-.skills-card-img_large {
-    height: auto;
-    max-width: 100%;
-    width: auto;
-    border: 0;
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-    overflow: clip;
-    overflow-clip-margin: content-box;
-}
-
-.skills-card-content-wrapper_large {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 0 16px 0;
-    align-self: center;
-    flex-basis: auto;
-    flex-direction: column;
-    flex-grow: 1;
-    flex-shrink: 1;
-    position: relative;
-    word-wrap: break-word;
-    box-sizing: inherit;
-}
-
-.skills-card-content_large {
-    text-align: center;
-    letter-spacing: -0.25px;
-    max-width: 680px;
-    margin: 0;
-    box-sizing: inherit;
-    display: block;
-    word-wrap: break-word;
-}
-
-/****************** skills small ******************/
-
-.skills_small {
-    display: flex;
-    margin: auto;
-    max-width: 85%;
-    justify-content: space-between;
-}
-
-.skills-card_small {
-    flex-direction: column;
-    align-items: center;
-    padding-right: 0;
-    flex-basis: calc(100% / 5 - 30px);
-    border: 2px solid #fff;
-    border-radius: 8px;
-    background-color: #FFF3E2;
-    gap: 0px;
-    max-width: 100%;
-    margin: 0;
-    flex-grow: 0;
-    flex-shrink: 0;
-    padding: 0;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left; /* Align text to left for cards */
 }
 
 .skills-card_small:hover {
-    background-color: #ffffffb7;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.1); /* Accent color shadow on hover */
 }
 
-/* Default styles for .skills-card-img-wrapper_small */
 .skills-card-img-wrapper_small {
     display: flex;
-    width: auto;
-    max-height: 50px;
-    margin: 10px auto;
-    position: relative;
-    padding: 0;
-    box-sizing: inherit;
+    align-items: center; /* Align image and text */
+    margin-bottom: 15px; /* Space between image+title and content */
 }
 
-/* Default styles for .skills-card-img_small */
-.skills-card-img_small {
-    height: 50px;
-    width: 100%;
-    object-fit: contain;
-    border: 0;
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-    transition: transform 0.5s ease; /* Add a smooth transition for the transform property */
+.skills-card-img-wrapper_small img {
+    max-width: 60px; /* Control image size in cards */
+    max-height: 60px;
+    margin-right: 15px;
+    border-radius: 4px; /* Slightly rounded images */
 }
 
-/*
-.skills-card-img_small-hover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: rotateY(180deg);
-    visibility: hidden;
-    width: 100%;
-    height: 50px;
-    object-fit: contain;
+.skills-card-content_small p, 
+.skills-card-content_small b,
+.skills-card-content_small em,
+.skills-card-content_small small {
+    font-size: 0.95em;
+    margin-bottom: 8px; /* Spacing for paragraphs within cards */
+    color: #c0c0c0; /* Lighter text for card content */
+}
+.skills-card-content_small b {
+    color: #e0e0e0; /* Slightly brighter for bold text */
+}
+.skills-card-content_small a {
+    font-style: italic;
 }
 
-#specific-skills-card:hover .skills-card-img_small {
-    visibility: hidden;
+
+/* Remove .education-details as grid-container and skills-card_small should handle this now */
+.education-details {
+    display: none; 
 }
 
-#specific-skills-card:hover .skills-card-img_small-hover {
-    visibility: visible;
-} 
-*/
 
-.skills-card-content-wrapper_small {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 0 12px 0;
-    align-self: center;
-    flex-basis: auto;
-    flex-direction: column;
-    flex-grow: 1;
-    flex-shrink: 1;
-    position: relative;
-    word-wrap: break-word;
-    box-sizing: inherit;
+/****************** SKILLS ******************/
+.skills-icon{ /* Main section icons (like programming.png) */
+    width: 80px; /* Adjusted size */
+    max-width: 80px;
+    margin-bottom: 15px; /* Space below icon */
+    filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg); /* Attempt to colorize PNGs to match theme, might need specific SVGs later */
 }
 
-.skills-card-content_small {
+.skills-header { /* Wrapper for section icon and title */
+    margin: 0 auto 30px auto; /* Center and add bottom margin */
     text-align: center;
-    letter-spacing: -0.25px;
-    max-width: 680px;
-    margin: 0;
-    box-sizing: inherit;
-    display: block;
-    word-wrap: break-word;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0;
+    box-sizing: inherit; /* Should be border-box by default from body or universal selector if used */
+    display: flex; /* Use flex to align icon and title */
+    flex-direction: column;
+    align-items: center;
 }
 
-/****************** Certificates ******************/
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 20px;
-    width: 85%;
-    margin: 0 auto;
-     /* margin: 0 20px; add left and right margins of 20px */
-  }
-  
-  .grid-item {
-    position: relative; /* add position relative to position the description element */
-    transition: opacity 0.3s ease-in-out;
-  }
-  
-  .grid-item img {
+.skills-header-content { /* The h2 title for sections */
+    padding-top: 0; /* Remove padding top if icon is above */
+    margin-top: 10px; /* Space between icon and text */
+}
+
+
+/* Skill cards styling (large and small) */
+.skills_large, .skills_small {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    margin: 20px auto;
+    max-width: 90%;
+    justify-content: center; /* Center cards */
+    gap: 20px; /* Gap between cards */
+}
+
+.skills-card_large, .skills-card_small.skill-item { /* Added .skill-item to differentiate from education/work cards if needed */
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #004444; /* Accent border */
+    border-radius: 8px;
+    background-color: #222222; /* Slightly different dark for skill cards */
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-basis: calc(33.333% - 40px); /* Default for 3 per row, adjust for .skills_small */
+    min-width: 200px; /* Minimum width for skill cards */
+    box-sizing: border-box;
+}
+
+.skills_small .skill-item { /* More items per row for smaller skill cards */
+    flex-basis: calc(20% - 40px); /* Approx 5 per row */
+    min-width: 150px;
+}
+
+
+.skills-card_large:hover, .skills-card_small.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 255, 255, 0.15);
+    background-color: #2f2f2f; /* Slightly lighter on hover */
+}
+
+.skills-card-img-wrapper_large, .skills-card-img-wrapper_small.skill-item-img {
+    display: flex;
+    justify-content: center; /* Center image */
+    width: 100%;
+    max-width: 80px; /* Max image width in card */
+    margin: 0 auto 15px auto; /* Auto margins for centering block element */
+}
+.skills-card_small.skill-item .skills-card-img-wrapper_small.skill-item-img { /* Specific for small skill items */
+     max-width: 50px;
+}
+
+
+.skills-card-img_large, .skills-card-img_small.skill-item-img img {
+    height: auto;
+    max-width: 100%;
+    border: 0;
+    filter: grayscale(30%) brightness(1.2); /* Subtle image effect */
+}
+
+.skills-card-content-wrapper_large, .skills-card-content-wrapper_small.skill-item-text {
+    text-align: center;
+}
+
+.skills-card-content_large, .skills-card-content_small.skill-item-text p {
+    letter-spacing: 0px; /* Adjusted letter spacing */
+    margin: 0;
+    color: #d0d0d0; /* Text color for card content */
+    font-size: 1em;
+}
+.skills-card_small.skill-item .skills-card-content_small.skill-item-text p {
+    font-size: 0.9em;
+}
+
+
+/****************** CERTIFICATES ******************/
+/* .grid-container is already defined */
+
+.grid-item {
+    position: relative;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease;
+    background-color: #2a2a2a; /* Card background for certificates */
+    border-radius: 8px;
+    overflow: hidden; /* Ensure description doesn't bleed out */
+    border: 1px solid #003333;
+}
+
+.grid-item img {
     max-width: 100%;
     height: auto;
-  }
-  
-  .description {
-    position: absolute; /* position the description element */
-    top: 0px; /* align the element to the top of the grid item */
-    width: 100%;
-    margin-bottom: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    font-size: 14px;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out; /* add a transition effect to the opacity */
-  }
-  
-  .grid-item:hover {
-    opacity: 0.9;
-  }
-  
-  .grid-item:hover .description {
-    opacity: 1; /* show the description element on hover */
-  }
-  
-/****************** Contact ******************/
+    display: block; /* Remove extra space below image */
+    transition: transform 0.3s ease;
+}
 
-.communicate {
-    width: 100px;
+.grid-item:hover img {
+    transform: scale(1.05); /* Slight zoom on image hover */
+}
+
+.description { /* Certificate description overlay */
+    position: absolute;
+    bottom: 0; /* Position at the bottom */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 20, 20, 0.85); /* Darker, slightly transparent accent */
+    color: #e0e0e0; /* Light text for description */
+    font-size: 0.9em;
+    text-align: center;
+    padding: 15px 10px; /* More padding */
+    opacity: 0;
+    transform: translateY(100%); /* Start off-screen */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    box-sizing: border-box;
+}
+
+.grid-item:hover .description {
+    opacity: 1;
+    transform: translateY(0); /* Slide in from bottom */
+}
+
+/****************** CONTACT ******************/
+.communicate { /* "Contact Me!" icon */
+    width: 70px; /* Adjusted */
+    margin-bottom: 10px;
+     filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg); /* Colorize like other section icons */
 }
 
 .contact {
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: center;
-    padding: 5px 0 5px 0;
+    padding: 8px 0; /* Adjusted padding */
 }
 
-.contact-img {
-    margin-right: 10px; /* Optional: Add some spacing between the image and paragraph */
-    max-width: 30px; /* Set the maximum width for the image */
+.contact p { /* Email text */
+    margin-left: 10px;
+    color: #c0c0c0;
+    margin-bottom: 0; /* Remove bottom margin from p inside contact */
 }
 
+.contact-img { /* Social media icons */
+    margin-right: 10px;
+    max-width: 28px; /* Slightly smaller social icons */
+    transition: transform 0.2s ease;
+}
+.contact-img:hover {
+    transform: scale(1.15); /* Grow on hover */
+}
 
+/* Adjustments for different screen sizes (basic example) */
+@media (max-width: 768px) {
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.6em; }
+    h3 { font-size: 1.3em; }
 
+    .skills_large, .skills_small {
+        max-width: 95%;
+    }
 
- 
+    .skills-card_large, .skills-card_small.skill-item {
+        flex-basis: calc(50% - 30px); /* 2 per row on medium screens */
+    }
+    .skills_small .skill-item {
+        flex-basis: calc(50% - 30px);
+    }
+
+    .grid-container { /* For certificates, education, work */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust minmax for smaller screens */
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-card_large, .skills-card_small.skill-item {
+        flex-basis: calc(100% - 20px); /* 1 per row on small screens */
+    }
+    .skills_small .skill-item {
+        flex-basis: calc(100% - 20px);
+    }
+
+    .pp { /* Profile picture */
+        width: 120px;
+        height: 120px;
+    }
+}
