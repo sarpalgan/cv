@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarp Algan</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images/einstein.png">
+</head>
+
+<body>
+
+    <div class="top-container">
+        <img class="pp" src="images/sarp.jpg" alt="my-profile-pic"  style="max-width: 200px;">
+        <h2>Hello</h2>
+        <p>I'm Sarp</p>
+
+    </div>
+
+    <div class="middle-container">
+
+        <div class="grid-container">
+
+            <div class="grid-item">
+                
+                <img src="images/education.png" class=skills-icon alt="education" style="max-width: 100px;">
+                <h2 class="skills-header-content">
+                        Education
+                </h2>
+
+                <div class="skills-card_small">
+                    <div class="skills-card-img-wrapper_small">
+                        <img alt="" class="skills-card-img_small" src="images/unimib.png">
+                    </div>
+                    <div class="skills-card-content-wrapper_small">
+                        <p class="skills-card-content_small">
+                            <b>Università degli Studi di<br>Milano-Bicocca</b><br>MSc. Artificial Intelligence for Science and Technology<br>2023-Still
+                        </p>
+                    </div>
+
+                    <br>
+
+                    <div class="skills-card-img-wrapper_small">
+                        <img alt="" class="skills-card-img_small" src="images/metu.png">
+                    </div>
+                    <div class="skills-card-content-wrapper_small">
+                        <p class="skills-card-content_small">
+                            <b>Middle East Technical University</b><br>BSc. Physics<br>2015-2021<br>GPA: 3.06 / 4.00
+                        </p>
+                    </div>
+
+                    <br>
+
+                    <div id="specific-skills-card" class="skills-card-img-wrapper_small">
+                        <img alt="" class="skills-card-img_small" src="images/report.png">
+                        <!-- <img alt="" class="skills-card-img_small skills-card-img_small-hover" src="images/report-inspect.png"> -->
+                    </div>
+                    <div class="skills-card-content-wrapper_small">
+                        <p class="skills-card-content_small">
+                            <b>BSc. Thesis</b>
+                            <br><em>Comparison of Classical and Quantum Support Vector Machines for Classification</em>
+                            <br>Algan S., Tüysüz C., Demirköz M.B.
+                            <br>August 2021
+                            <br>
+                            <br><small> Acknowledgements
+                            <br><small>
+                            This work is supported by The Research and Application Center for Space and Accelerator Technologies (IVMER), and The Turkish Academy
+                            of Sciences (TÜBA).</small><br>
+                            <br><a href="https://drive.google.com/file/d/1KJ9UeTxKpa9qoE0qwRvv9WMsoRDZe4ho/view?usp=sharing" target="_blank">
+                                <em>Click here to view the thesis</em></a> </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                                 
+                <img src="images/briefcase.png" class=skills-icon alt="education"  style="max-width: 100px;">
+                <h2 class="skills-header-content">
+                        Work History
+                </h2>
+
+                <div class="skills-card_small">
+                    <div class="skills-card-img-wrapper_small">
+                        <img alt="" class="skills-card-img_small" src="images/Egemenyazlmlogo2.png">
+                    </div>
+                    <div class="skills-card-content-wrapper_small">
+                        <p class="skills-card-content_small">
+                            <b>Egemen Software</b>
+                            <br>Machine Learning Engineer
+                            <br>Full Time
+                            <br>Jul 2022 - Still
+                        </p>
+                    </div>
+                </div>
+
+                <br>
+                <div class="skills-card_small">
+                    <div class="skills-card-img-wrapper_small">
+                        <img alt="" class="skills-card-img_small" src="images/labomak-logo2.png">
+                    </div>
+                    <div class="skills-card-content-wrapper_small">
+                        <p class="skills-card-content_small">
+                            <b>Labomak Makine</b> 
+                            <br>Research And Development Engineer
+                            <br>Full Time 
+                            <br>Dec 2021 - Jun 2022
+                        </p>
+                    </div>
+                </div>
+
+                <br>
+                <div class="skills-card_small">
+                    <div class="skills-card-img-wrapper_small">
+                        <img alt="" class="skills-card-img_small" src="images/ivmer_logo.png">
+                    </div>
+                    <div class="skills-card-content-wrapper_small">
+                        <p class="skills-card-content_small">
+                            <b>ODTÜ(METU) İvmer</b> 
+                            <br>Quantum Machine Learning Reseacher
+                            <br>Intern 
+                            <br>Mar 2021 - Dec 2021
+                        </p>
+                    </div>
+                </div>
+
+                <br>
+                <div class="skills-card_small">
+                    <div class="skills-card-img-wrapper_small">
+                        <img alt="" class="skills-card-img_small" src="images/TAEK.png">
+                    </div>
+                    <div class="skills-card-content-wrapper_small">
+                        <p class="skills-card-content_small">
+                            <b>Turkish Atomic Energy Authority</b> 
+                            <br>Research Physicist
+                            <br>Intern 
+                            <br>Nov 2021 - Dec 2021
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+
+        <!--    SKILLS    -->
+        <hr>
+
+
+        <div class="skills-header">
+            <img src="images/programing.png" class=skills-icon alt="Skills">
+            <h2 class="skills-header-content">
+                Skills
+            </h2>
+        </div>
+
+
+        <!--    skills_large    -->
+        <div class="skills_large">
+            <div class="skills-card_large">
+                <div class="skills-card-img-wrapper_large">
+                    <img alt="" class="skills-card-img_large" src="images/ml.png">
+                </div>
+                <div class="skills-card-content-wrapper_large">
+                    <p class="skills-card-content_large">
+                        Machine Learning
+                    </p>
+                </div>
+            </div>
+
+            <div class="skills-card_large">
+                <div class="skills-card-img-wrapper_large">
+                    <img alt="" class="skills-card-img_large" src="images/vision.png">
+                </div>
+                <div class="skills-card-content-wrapper_large">
+                    <p class="skills-card-content_large">
+                        Computer Vision
+                    </p>
+                </div>
+            </div>
+
+            <div class="skills-card_large">
+                <div class="skills-card-img-wrapper_large">
+                    <img alt="" class="skills-card-img_large" src="images/atom.png">
+                </div>
+                <div class="skills-card-content-wrapper_large">
+                    <p class="skills-card-content_large">
+                        Physics
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!--    skills_small    -->
+        <div class="skills_small">
+            <div class="skills-card_small">
+                <div class="skills-card-img-wrapper_small">
+                    <img alt="" class="skills-card-img_small" src="images/python.png">
+                </div>
+                <div class="skills-card-content-wrapper_small">
+                    <p class="skills-card-content_small">
+                        Python
+                    </p>
+                </div>
+            </div>
+
+            <div class="skills-card_small">
+                <div class="skills-card-img-wrapper_small">
+                    <img alt="" class="skills-card-img_small" src="images/Tensorflow_logo.png">
+                </div>
+                <div class="skills-card-content-wrapper_small">
+                    <p class="skills-card-content_small">
+                        Tensorflow
+                    </p>
+                </div>
+            </div>
+
+            <div class="skills-card_small">
+                <div class="skills-card-img-wrapper_small">
+                    <img alt="" class="skills-card-img_small" src="images/opencv.png">
+                </div>
+                <div class="skills-card-content-wrapper_small">
+                    <p class="skills-card-content_small">
+                        OpenCV
+                    </p>
+                </div>
+            </div>
+
+            <div class="skills-card_small">
+                <div class="skills-card-img-wrapper_small">
+                    <img alt="" class="skills-card-img_small" src="images/sklearn.png">
+                </div>
+                <div class="skills-card-content-wrapper_small">
+                    <p class="skills-card-content_small">
+                        Scikit-learn
+                    </p>
+                </div>
+            </div>
+
+            <div class="skills-card_small">
+                <div class="skills-card-img-wrapper_small">
+                    <img alt="" class="skills-card-img_small" src="images/figma.png">
+                </div>
+                <div class="skills-card-content-wrapper_small">
+                    <p class="skills-card-content_small">
+                        Figma
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!--    CERTIFICATES    -->     
+        <hr>
+        <div class="skills-header">
+            <img src="images/certificate.png" class=skills-icon alt="certificates">
+            <h2 class="skills-header-content">
+                Certificates
+            </h2>
+        </div>
+        <div class="grid-container">
+
+            <!--Advanced Computer Vision with Tensorflow-->
+            <div class="grid-item">
+                <a href="https://www.coursera.org/account/accomplishments/certificate/22RWC74X5B8R" target="_blank">
+                  <img src="pdfs/advanced_computer_vision_with_tensorflow-1.png" alt="Certificate 1">
+                </a>
+                <div class="description">Advanced Computer Vision with Tensorflow</div>
+            </div>
+
+            <!--Improving Deep Neural Networks-->
+            <div class="grid-item">
+                <a href="https://www.coursera.org/account/accomplishments/certificate/243QYJJ84524" target="_blank">
+                  <img src="pdfs/ImprovingDeepNeuralNetworks-1.png" alt="Certificate 1">
+                </a>
+                <div class="description">Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</div>
+            </div>
+            <!--The Ultimate MySQL Bootcamp Go from SQL Beginner to Expert-->
+            <div class="grid-item">
+                <a href="https://www.udemy.com/certificate/UC-7e635cc2-6d4c-46b9-af94-ec1db52c5895/" target="_blank">
+                  <img src="pdfs/The Ultimate MySQL Bootcamp Go from SQL Beginner to Expert.jpg" alt="Certificate 1">
+                </a>
+                <div class="description">The Ultimate MySQL Bootcamp Go from SQL Beginner to Expert</div>
+            </div>
+
+            <!--Unsupervised Learning, Recommenders, Reinforcement Learning-->
+            <div class="grid-item">
+                <a href="https://www.coursera.org/account/accomplishments/certificate/AJE9WGNDCAJS" target="_blank">
+                  <img src="pdfs/Unsupervised Learning, Recommenders, Reinforcement Learning-1.png" alt="Certificate 1">
+                </a>
+                <div class="description">Unsupervised Learning, Recommenders, Reinforcement Learning</div>
+            </div>
+
+            <!--Convolutional Neural Networks-->
+            <div class="grid-item">
+                <a href="https://www.coursera.org/account/accomplishments/certificate/7H66USWK2MX7" target="_blank">
+                  <img src="pdfs/Convolutional Neural Networks-1.png" alt="Certificate 1">
+                </a>
+                <div class="description">Convolutional Neural Networks</div>
+            </div>
+
+            <!--Python for Data Science and Machine Learning Bootcamp-->
+            <div class="grid-item">
+                <a href="https://www.udemy.com/certificate/UC-2e2c6264-c1bd-42e8-ab59-5ea03ca38b85/" target="_blank">
+                  <img src="pdfs/Python for Data Science and Machine Learning Bootcamp.jpg" alt="Certificate 1">
+                </a>
+                <div class="description">Python for Data Science and Machine Learning Bootcamp</div>
+            </div>
+
+            <!--Machine Learning-->
+            <div class="grid-item">
+                <a href="https://www.coursera.org/account/accomplishments/certificate/ZBJMNZMNVAK5" target="_blank">
+                  <img src="pdfs/Machine-Learning.png" alt="Certificate 1">
+                </a>
+                <div class="description">Machine Learning</div>
+            </div>
+
+            <!--LFS101x: Introduction to Linux-->
+            <div class="grid-item">
+                <a href="https://courses.edx.org/certificates/aca2ca8f5de04bdf98dcee5de426bde7" target="_blank">
+                  <img src="pdfs/edX-LinuxFoundationX-LFS101x-Sertifikası (1).png" alt="Certificate 1">
+                </a>
+                <div class="description">LFS101x: Introduction to Linux</div>
+            </div>
+
+            <!--PY0101EN: Python Basics for Data Science-->
+            <div class="grid-item">
+                <a href="https://courses.edx.org/certificates/b5a1259b2f494af180ef019a21db97fb" target="_blank">
+                  <img src="pdfs/Python-Basics-for-Data-Science.png" alt="Certificate 1">
+                </a>
+                <div class="description">PY0101EN: Python Basics for Data Science</div>
+            </div>
+
+          </div>
+    </div>
+
+    <div class="bottom-container">
+        <img class="communicate" src="images/communicate.png" alt="communicate">
+        <h2>Contact Me!</h2>
+
+        <div class="contact">
+            <img src="images/email.png" alt="email" class="contact-img">
+            <p>sarpalgan@gmail.com</p>
+        </div>        
+
+        <div class="contact">
+            <a href="https://www.linkedin.com/in/sarp-algan-6ab8201b9/" target="_blank">
+            <img src="images/linkedin.png" alt="Linked-in" class="contact-img"></a>
+
+            <a href="https://www.instagram.com/sarpalgan/" target="_blank">
+                <img src="images/instagram.png" alt="Instagram" class="contact-img"></a>
+        </div>
+    </div>
+    
+</body>
+
+</html>
