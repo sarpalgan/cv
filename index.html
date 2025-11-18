@@ -1,356 +1,493 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarp Algan</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="images/einstein.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarp Algan — ML Engineer</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
-    <div class="top-container">
-        <img class="pp" src="images/sarp.jpg" alt="my-profile-pic"  style="max-width: 200px;">
-        <h2>Hello</h2>
-        <p>I'm Sarp</p>
-
-    </div>
-
-    <div class="middle-container">
-
-        <div class="grid-container">
-
-            <div class="grid-item">
-                
-                <img src="images/education.png" class=skills-icon alt="education" style="max-width: 100px;">
-                <h2 class="skills-header-content">
-                        Education
-                </h2>
-
-                <div class="skills-card_small">
-                    <div class="skills-card-img-wrapper_small">
-                        <img alt="" class="skills-card-img_small" src="images/unimib.png">
-                    </div>
-                    <div class="skills-card-content-wrapper_small">
-                        <p class="skills-card-content_small">
-                            <b>Università degli Studi di<br>Milano-Bicocca</b><br>MSc. Artificial Intelligence for Science and Technology<br>2023-Still
-                        </p>
-                    </div>
-
-                    <br>
-
-                    <div class="skills-card-img-wrapper_small">
-                        <img alt="" class="skills-card-img_small" src="images/metu.png">
-                    </div>
-                    <div class="skills-card-content-wrapper_small">
-                        <p class="skills-card-content_small">
-                            <b>Middle East Technical University</b><br>BSc. Physics<br>2015-2021<br>GPA: 3.06 / 4.00
-                        </p>
-                    </div>
-
-                    <br>
-
-                    <div id="specific-skills-card" class="skills-card-img-wrapper_small">
-                        <img alt="" class="skills-card-img_small" src="images/report.png">
-                        <!-- <img alt="" class="skills-card-img_small skills-card-img_small-hover" src="images/report-inspect.png"> -->
-                    </div>
-                    <div class="skills-card-content-wrapper_small">
-                        <p class="skills-card-content_small">
-                            <b>BSc. Thesis</b>
-                            <br><em>Comparison of Classical and Quantum Support Vector Machines for Classification</em>
-                            <br>Algan S., Tüysüz C., Demirköz M.B.
-                            <br>August 2021
-                            <br>
-                            <br><small> Acknowledgements
-                            <br><small>
-                            This work is supported by The Research and Application Center for Space and Accelerator Technologies (IVMER), and The Turkish Academy
-                            of Sciences (TÜBA).</small><br>
-                            <br><a href="https://drive.google.com/file/d/1KJ9UeTxKpa9qoE0qwRvv9WMsoRDZe4ho/view?usp=sharing" target="_blank">
-                                <em>Click here to view the thesis</em></a> </small>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-item">
-                                 
-                <img src="images/briefcase.png" class=skills-icon alt="education"  style="max-width: 100px;">
-                <h2 class="skills-header-content">
-                        Work History
-                </h2>
-
-                <div class="skills-card_small">
-                    <div class="skills-card-img-wrapper_small">
-                        <img alt="" class="skills-card-img_small" src="images/Egemenyazlmlogo2.png">
-                    </div>
-                    <div class="skills-card-content-wrapper_small">
-                        <p class="skills-card-content_small">
-                            <b>Egemen Software</b>
-                            <br>Machine Learning Engineer
-                            <br>Full Time
-                            <br>Jul 2022 - Still
-                        </p>
-                    </div>
-                </div>
-
-                <br>
-                <div class="skills-card_small">
-                    <div class="skills-card-img-wrapper_small">
-                        <img alt="" class="skills-card-img_small" src="images/labomak-logo2.png">
-                    </div>
-                    <div class="skills-card-content-wrapper_small">
-                        <p class="skills-card-content_small">
-                            <b>Labomak Makine</b> 
-                            <br>Research And Development Engineer
-                            <br>Full Time 
-                            <br>Dec 2021 - Jun 2022
-                        </p>
-                    </div>
-                </div>
-
-                <br>
-                <div class="skills-card_small">
-                    <div class="skills-card-img-wrapper_small">
-                        <img alt="" class="skills-card-img_small" src="images/ivmer_logo.png">
-                    </div>
-                    <div class="skills-card-content-wrapper_small">
-                        <p class="skills-card-content_small">
-                            <b>ODTÜ(METU) İvmer</b> 
-                            <br>Quantum Machine Learning Reseacher
-                            <br>Intern 
-                            <br>Mar 2021 - Dec 2021
-                        </p>
-                    </div>
-                </div>
-
-                <br>
-                <div class="skills-card_small">
-                    <div class="skills-card-img-wrapper_small">
-                        <img alt="" class="skills-card-img_small" src="images/TAEK.png">
-                    </div>
-                    <div class="skills-card-content-wrapper_small">
-                        <p class="skills-card-content_small">
-                            <b>Turkish Atomic Energy Authority</b> 
-                            <br>Research Physicist
-                            <br>Intern 
-                            <br>Nov 2021 - Dec 2021
-                        </p>
-                    </div>
-                </div>
-
-            </div>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">Sarp Algan</a>
+            <ul class="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-        
+    </nav>
 
-        <!--    SKILLS    -->
-        <hr>
-
-
-        <div class="skills-header">
-            <img src="images/programing.png" class=skills-icon alt="Skills">
-            <h2 class="skills-header-content">
-                Skills
-            </h2>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <!-- Animated Background -->
+        <div class="hero-background">
+            <div class="grid-background"></div>
+            <canvas id="particlesCanvas" class="particles-canvas"></canvas>
         </div>
 
-
-        <!--    skills_large    -->
-        <div class="skills_large">
-            <div class="skills-card_large">
-                <div class="skills-card-img-wrapper_large">
-                    <img alt="" class="skills-card-img_large" src="images/ml.png">
-                </div>
-                <div class="skills-card-content-wrapper_large">
-                    <p class="skills-card-content_large">
-                        Machine Learning
-                    </p>
-                </div>
-            </div>
-
-            <div class="skills-card_large">
-                <div class="skills-card-img-wrapper_large">
-                    <img alt="" class="skills-card-img_large" src="images/vision.png">
-                </div>
-                <div class="skills-card-content-wrapper_large">
-                    <p class="skills-card-content_large">
-                        Computer Vision
-                    </p>
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="section-label">Full-Stack AI Developer</span>
+                <h1 class="hero-title fade-in">
+                    <span class="line">Shipping Vision & LLM</span>
+                    <span class="line">Products End-to-End</span>
+                </h1>
+                <p class="hero-subtitle fade-in-delay">Computer vision · Edge AI · LLM automations</p>
+                <p class="hero-description">
+                    I build YOLO/TensorFlow pipelines on NVIDIA Jetson, multilingual RAG chatbots, and React + Supabase
+                    interfaces that bring ML research into production for manufacturing, research, and enterprise teams.
+                </p>
+                <div class="hero-cta fade-in-delay-2">
+                    <a href="#projects" class="btn-primary">View Work</a>
+                    <a href="#contact" class="btn-secondary">Get in Touch</a>
                 </div>
             </div>
 
-            <div class="skills-card_large">
-                <div class="skills-card-img-wrapper_large">
-                    <img alt="" class="skills-card-img_large" src="images/atom.png">
+            <!-- Profile Picture -->
+            <div class="hero-profile fade-in">
+                <div class="profile-image-wrapper">
+                    <div class="profile-image">
+                        <div class="placeholder-content">Your Photo</div>
+                    </div>
+                    <div class="profile-ring"></div>
+                    <div class="profile-ring-2"></div>
                 </div>
-                <div class="skills-card-content-wrapper_large">
-                    <p class="skills-card-content_large">
-                        Physics
-                    </p>
+                <div class="profile-caption">
+                    <p>Sarp Algan</p>
+                    <span>Milan · Istanbul · Delivering AI for industry</span>
                 </div>
             </div>
         </div>
 
-        <!--    skills_small    -->
-        <div class="skills_small">
-            <div class="skills-card_small">
-                <div class="skills-card-img-wrapper_small">
-                    <img alt="" class="skills-card-img_small" src="images/python.png">
-                </div>
-                <div class="skills-card-content-wrapper_small">
-                    <p class="skills-card-content_small">
-                        Python
-                    </p>
-                </div>
-            </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
 
-            <div class="skills-card_small">
-                <div class="skills-card-img-wrapper_small">
-                    <img alt="" class="skills-card-img_small" src="images/Tensorflow_logo.png">
-                </div>
-                <div class="skills-card-content-wrapper_small">
-                    <p class="skills-card-content_small">
-                        Tensorflow
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content reveal">
+                    <span class="section-label">About Me</span>
+                    <h2 class="section-title">Full-stack AI developer with a physics backbone</h2>
+                    <p class="about-text">
+                        I’m currently pursuing an M.Sc. in AI for Science & Technology at the University of Milano-Bicocca while
+                        delivering production ML systems for textile manufacturing, enterprise automation, and research labs.
+                        My toolkit spans Python, TensorFlow, PyTorch, YOLO, Supabase, and React, with deployments that run
+                        reliably on NVIDIA Jetson devices.
+                    </p>
+                    <p class="about-text">
+                        I love translating scientific thinking into usable products: blending computer vision, LLM workflows,
+                        and edge hardware expertise to solve real operations problems. Fluent in English and Turkish, learning
+                        Italian, and always experimenting with new ways to merge physics intuition with AI engineering.
                     </p>
                 </div>
-            </div>
-
-            <div class="skills-card_small">
-                <div class="skills-card-img-wrapper_small">
-                    <img alt="" class="skills-card-img_small" src="images/opencv.png">
-                </div>
-                <div class="skills-card-content-wrapper_small">
-                    <p class="skills-card-content_small">
-                        OpenCV
-                    </p>
-                </div>
-            </div>
-
-            <div class="skills-card_small">
-                <div class="skills-card-img-wrapper_small">
-                    <img alt="" class="skills-card-img_small" src="images/sklearn.png">
-                </div>
-                <div class="skills-card-content-wrapper_small">
-                    <p class="skills-card-content_small">
-                        Scikit-learn
-                    </p>
-                </div>
-            </div>
-
-            <div class="skills-card_small">
-                <div class="skills-card-img-wrapper_small">
-                    <img alt="" class="skills-card-img_small" src="images/figma.png">
-                </div>
-                <div class="skills-card-content-wrapper_small">
-                    <p class="skills-card-content_small">
-                        Figma
-                    </p>
+                <div class="about-image reveal-delay">
+                    <div class="image-placeholder">
+                        <!-- Replace with your image -->
+                        <div class="placeholder-content">Your Photo</div>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!--    CERTIFICATES    -->     
-        <hr>
-        <div class="skills-header">
-            <img src="images/certificate.png" class=skills-icon alt="certificates">
-            <h2 class="skills-header-content">
-                Certificates
-            </h2>
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <div class="container-wide">
+            <span class="section-label">Selected Work</span>
+            <h2 class="section-title-large">Projects</h2>
+
+            <!-- Project 1 -->
+            <article class="project project-large reveal">
+                <div class="project-image">
+                    <div class="image-placeholder">
+                        <div class="placeholder-content">Project Image</div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Lead Time Prediction Platform</h3>
+                    <p class="project-description">
+                        Finalized TÜBİTAK 1501 R&D program that ingests live textile data, applies Random Forest, SVM,
+                        MLP, and K-Means ensembles with Z-score normalization, and delivers actionable lead-time
+                        forecasts plus bottleneck dashboards for planners.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Random Forest</span>
+                        <span class="tag">SVM</span>
+                        <span class="tag">TÜBİTAK 1501</span>
+                        <span class="tag">Egemen Yazılım</span>
+                    </div>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project project-reverse reveal">
+                <div class="project-image">
+                    <div class="image-placeholder">
+                        <div class="placeholder-content">Project Image</div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Fabric Defect Detection</h3>
+                    <p class="project-description">
+                        TÜBİTAK 1501 (application stage) edge CV stack with YOLO/TensorFlow, curated datasets, custom
+                        lighting rigs, and sensor/lens selection to flag weave defects on NVIDIA Jetson in real time.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">YOLO</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">Jetson</span>
+                        <span class="tag">Egemen Yazılım</span>
+                    </div>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project project-large reveal">
+                <div class="project-image">
+                    <div class="image-placeholder">
+                        <div class="placeholder-content">Project Image</div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Multilingual RAG Document Assistant</h3>
+                    <p class="project-description">
+                        PC CUBE microservice indexing Italian and English archives with BM25, transformer embeddings, and
+                        vector DBs, exposing RAG chat, classification endpoints, and Apache Artemis messaging.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">RAG</span>
+                        <span class="tag">OpenAI API</span>
+                        <span class="tag">Vector DB</span>
+                        <span class="tag">PC CUBE</span>
+                    </div>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </article>
+
+            <!-- Project 4 -->
+            <article class="project project-reverse reveal">
+                <div class="project-image">
+                    <div class="image-placeholder">
+                        <div class="placeholder-content">Project Image</div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Labomak CRM Platform</h3>
+                    <p class="project-description">
+                        React + Supabase quotation suite delivering company-branded PDFs, RBAC/RLS-secured data, and
+                        shared codebase builds for Android (Capacitor) and Windows (Electron) with a component-driven UI.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Supabase</span>
+                        <span class="tag">Tailwind</span>
+                        <span class="tag">Electron</span>
+                    </div>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </article>
         </div>
-        <div class="grid-container">
+    </section>
 
-            <!--Advanced Computer Vision with Tensorflow-->
-            <div class="grid-item">
-                <a href="https://www.coursera.org/account/accomplishments/certificate/22RWC74X5B8R" target="_blank">
-                  <img src="pdfs/advanced_computer_vision_with_tensorflow-1.png" alt="Certificate 1">
-                </a>
-                <div class="description">Advanced Computer Vision with Tensorflow</div>
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+        <div class="container">
+            <span class="section-label">Capabilities</span>
+            <h2 class="section-title">Skills & Technologies</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category reveal">
+                    <h3 class="skill-title">ML & Data Science</h3>
+                    <ul class="skill-list">
+                        <li>Python, TensorFlow, PyTorch, Keras</li>
+                        <li>Scikit-learn, XGBoost, classical ML</li>
+                        <li>Data prep · PCA · statistical analysis</li>
+                        <li>Jupyter, Anaconda, virtual envs</li>
+                        <li>Regression, classification, clustering</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category reveal-delay">
+                    <h3 class="skill-title">Computer Vision & Edge</h3>
+                    <ul class="skill-list">
+                        <li>YOLO detection/segmentation</li>
+                        <li>OpenCV pipelines, image annotation</li>
+                        <li>NVIDIA Jetson, Raspberry Pi, CUDA</li>
+                        <li>Camera, lens, lighting configuration</li>
+                        <li>Model optimization for on-device use</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category reveal-delay-2">
+                    <h3 class="skill-title">AI Automation & Full Stack</h3>
+                    <ul class="skill-list">
+                        <li>LLM / RAG design, OpenAI API</li>
+                        <li>n8n workflows & chatbots</li>
+                        <li>React, Tailwind, Supabase</li>
+                        <li>Docker, Git, Linux deployments</li>
+                        <li>REST/WS integrations & CI/CD hooks</li>
+                    </ul>
+                </div>
             </div>
-
-            <!--Improving Deep Neural Networks-->
-            <div class="grid-item">
-                <a href="https://www.coursera.org/account/accomplishments/certificate/243QYJJ84524" target="_blank">
-                  <img src="pdfs/ImprovingDeepNeuralNetworks-1.png" alt="Certificate 1">
-                </a>
-                <div class="description">Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</div>
-            </div>
-            <!--The Ultimate MySQL Bootcamp Go from SQL Beginner to Expert-->
-            <div class="grid-item">
-                <a href="https://www.udemy.com/certificate/UC-7e635cc2-6d4c-46b9-af94-ec1db52c5895/" target="_blank">
-                  <img src="pdfs/The Ultimate MySQL Bootcamp Go from SQL Beginner to Expert.jpg" alt="Certificate 1">
-                </a>
-                <div class="description">The Ultimate MySQL Bootcamp Go from SQL Beginner to Expert</div>
-            </div>
-
-            <!--Unsupervised Learning, Recommenders, Reinforcement Learning-->
-            <div class="grid-item">
-                <a href="https://www.coursera.org/account/accomplishments/certificate/AJE9WGNDCAJS" target="_blank">
-                  <img src="pdfs/Unsupervised Learning, Recommenders, Reinforcement Learning-1.png" alt="Certificate 1">
-                </a>
-                <div class="description">Unsupervised Learning, Recommenders, Reinforcement Learning</div>
-            </div>
-
-            <!--Convolutional Neural Networks-->
-            <div class="grid-item">
-                <a href="https://www.coursera.org/account/accomplishments/certificate/7H66USWK2MX7" target="_blank">
-                  <img src="pdfs/Convolutional Neural Networks-1.png" alt="Certificate 1">
-                </a>
-                <div class="description">Convolutional Neural Networks</div>
-            </div>
-
-            <!--Python for Data Science and Machine Learning Bootcamp-->
-            <div class="grid-item">
-                <a href="https://www.udemy.com/certificate/UC-2e2c6264-c1bd-42e8-ab59-5ea03ca38b85/" target="_blank">
-                  <img src="pdfs/Python for Data Science and Machine Learning Bootcamp.jpg" alt="Certificate 1">
-                </a>
-                <div class="description">Python for Data Science and Machine Learning Bootcamp</div>
-            </div>
-
-            <!--Machine Learning-->
-            <div class="grid-item">
-                <a href="https://www.coursera.org/account/accomplishments/certificate/ZBJMNZMNVAK5" target="_blank">
-                  <img src="pdfs/Machine-Learning.png" alt="Certificate 1">
-                </a>
-                <div class="description">Machine Learning</div>
-            </div>
-
-            <!--LFS101x: Introduction to Linux-->
-            <div class="grid-item">
-                <a href="https://courses.edx.org/certificates/aca2ca8f5de04bdf98dcee5de426bde7" target="_blank">
-                  <img src="pdfs/edX-LinuxFoundationX-LFS101x-Sertifikası (1).png" alt="Certificate 1">
-                </a>
-                <div class="description">LFS101x: Introduction to Linux</div>
-            </div>
-
-            <!--PY0101EN: Python Basics for Data Science-->
-            <div class="grid-item">
-                <a href="https://courses.edx.org/certificates/b5a1259b2f494af180ef019a21db97fb" target="_blank">
-                  <img src="pdfs/Python-Basics-for-Data-Science.png" alt="Certificate 1">
-                </a>
-                <div class="description">PY0101EN: Python Basics for Data Science</div>
-            </div>
-
-          </div>
-    </div>
-
-    <div class="bottom-container">
-        <img class="communicate" src="images/communicate.png" alt="communicate">
-        <h2>Contact Me!</h2>
-
-        <div class="contact">
-            <img src="images/email.png" alt="email" class="contact-img">
-            <p>sarpalgan@gmail.com</p>
-        </div>        
-
-        <div class="contact">
-            <a href="https://www.linkedin.com/in/sarp-algan-6ab8201b9/" target="_blank">
-            <img src="images/linkedin.png" alt="Linked-in" class="contact-img"></a>
-
-            <a href="https://www.instagram.com/sarpalgan/" target="_blank">
-                <img src="images/instagram.png" alt="Instagram" class="contact-img"></a>
         </div>
-    </div>
-    
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience section">
+        <div class="container">
+            <span class="section-label">Career</span>
+            <h2 class="section-title">Experience</h2>
+
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">Jul 2022 — Present</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Machine Learning Engineer</h3>
+                        <p class="timeline-company">Egemen Software · Istanbul / Remote</p>
+                        <p class="timeline-description">
+                            Delivered a finalized TÜBİTAK 1501 lead-time prediction suite (Random Forest / SVM / MLP) and
+                            led application-stage fabric defect detection with YOLO/TensorFlow, custom optics, and Jetson
+                            deployments for textile factories.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">Apr 2024 — Feb 2025</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Machine Learning Engineer (Remote)</h3>
+                        <p class="timeline-company">PC CUBE · Rome</p>
+                        <p class="timeline-description">
+                            Built multilingual RAG chatbots, zero/few-shot document classifiers, Apache Artemis-backed
+                            messaging, and LLM-driven JUnit/test generation plus time-prediction models for public-sector
+                            teams.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">Dec 2021 — Jun 2022</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">R&D Engineer</h3>
+                        <p class="timeline-company">Labomak Makine · Istanbul</p>
+                        <p class="timeline-description">
+                            Co-architected Labomak CRM: React + Supabase quotation platform with RBAC/RLS security, PDF
+                            proposal engines, and shared Capacitor/Electron builds for Android and Windows sales teams.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">Mar 2021 — Dec 2021</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Quantum ML Researcher (Intern)</h3>
+                        <p class="timeline-company">METU İVMER · Ankara</p>
+                        <p class="timeline-description">
+                            Led the campus QML research group, taught introductory sessions, and co-authored research on
+                            quantum kernels for classification tasks.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">Nov 2021 — Dec 2021</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Research Physicist (Intern)</h3>
+                        <p class="timeline-company">Turkish Atomic Energy Authority · Ankara</p>
+                        <p class="timeline-description">
+                            Supported particle accelerator research initiatives and reported on experimental configurations
+                            for senior physicists.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education section">
+        <div class="container">
+            <span class="section-label">Background</span>
+            <h2 class="section-title">Education</h2>
+
+            <div class="education-grid">
+                <div class="education-item reveal">
+                    <h3 class="education-degree">M.Sc. Artificial Intelligence for Science & Technology</h3>
+                    <p class="education-school">University of Milano-Bicocca · 2023 — Present</p>
+                    <p class="education-year">Milan, Italy</p>
+                </div>
+
+                <div class="education-item reveal-delay">
+                    <h3 class="education-degree">B.Sc. Physics (GPA 3.06 / 4.00)</h3>
+                    <p class="education-school">Middle East Technical University · 2015 — 2021</p>
+                    <p class="education-year">Ankara, Türkiye · Thesis: <a href="https://drive.google.com/file/d/1KJ9UeTxKpa9qoE0qwRvv9WMsoRDZe4ho/view?usp=sharing" target="_blank">Comparison of Classical and Quantum SVMs</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates section">
+        <div class="container">
+            <span class="section-label">Credentials</span>
+            <div class="certificates-header">
+                <h2 class="section-title">Certifications & Micro-Credentials</h2>
+                <p class="certificates-subtitle">Selected courses that reinforce production-grade computer vision, ML, and data systems work.</p>
+            </div>
+            <div class="certificates-grid">
+
+                <!--Advanced Computer Vision with Tensorflow-->
+                <figure class="certificate-card">
+                    <a href="https://www.coursera.org/account/accomplishments/certificate/22RWC74X5B8R" target="_blank">
+                        <img src="pdfs/advanced_computer_vision_with_tensorflow-1.png" alt="Advanced Computer Vision with TensorFlow certificate">
+                    </a>
+                    <figcaption>Advanced Computer Vision with TensorFlow — Coursera</figcaption>
+                </figure>
+
+                <!--Improving Deep Neural Networks-->
+                <figure class="certificate-card">
+                    <a href="https://www.coursera.org/account/accomplishments/certificate/243QYJJ84524" target="_blank">
+                        <img src="pdfs/ImprovingDeepNeuralNetworks-1.png" alt="Improving Deep Neural Networks certificate">
+                    </a>
+                    <figcaption>Improving Deep Neural Networks — Coursera</figcaption>
+                </figure>
+
+                <!--The Ultimate MySQL Bootcamp Go from SQL Beginner to Expert-->
+                <figure class="certificate-card">
+                    <a href="https://www.udemy.com/certificate/UC-7e635cc2-6d4c-46b9-af94-ec1db52c5895/" target="_blank">
+                        <img src="pdfs/The Ultimate MySQL Bootcamp Go from SQL Beginner to Expert.jpg" alt="The Ultimate MySQL Bootcamp certificate">
+                    </a>
+                    <figcaption>The Ultimate MySQL Bootcamp — Udemy</figcaption>
+                </figure>
+
+                <!--Unsupervised Learning, Recommenders, Reinforcement Learning-->
+                <figure class="certificate-card">
+                    <a href="https://www.coursera.org/account/accomplishments/certificate/AJE9WGNDCAJS" target="_blank">
+                        <img src="pdfs/Unsupervised Learning, Recommenders, Reinforcement Learning-1.png" alt="Unsupervised Learning certificate">
+                    </a>
+                    <figcaption>Unsupervised Learning, Recommenders & RL — Coursera</figcaption>
+                </figure>
+
+                <!--Convolutional Neural Networks-->
+                <figure class="certificate-card">
+                    <a href="https://www.coursera.org/account/accomplishments/certificate/7H66USWK2MX7" target="_blank">
+                        <img src="pdfs/Convolutional Neural Networks-1.png" alt="Convolutional Neural Networks certificate">
+                    </a>
+                    <figcaption>Convolutional Neural Networks — Coursera</figcaption>
+                </figure>
+
+                <!--Python for Data Science and Machine Learning Bootcamp-->
+                <figure class="certificate-card">
+                    <a href="https://www.udemy.com/certificate/UC-2e2c6264-c1bd-42e8-ab59-5ea03ca38b85/" target="_blank">
+                        <img src="pdfs/Python for Data Science and Machine Learning Bootcamp.jpg" alt="Python for Data Science and Machine Learning Bootcamp certificate">
+                    </a>
+                    <figcaption>Python for Data Science & ML Bootcamp — Udemy</figcaption>
+                </figure>
+
+                <!--Machine Learning-->
+                <figure class="certificate-card">
+                    <a href="https://www.coursera.org/account/accomplishments/certificate/ZBJMNZMNVAK5" target="_blank">
+                        <img src="pdfs/Machine-Learning.png" alt="Machine Learning certificate">
+                    </a>
+                    <figcaption>Machine Learning (Andrew Ng) — Coursera</figcaption>
+                </figure>
+
+                <!--LFS101x: Introduction to Linux-->
+                <figure class="certificate-card">
+                    <a href="https://courses.edx.org/certificates/aca2ca8f5de04bdf98dcee5de426bde7" target="_blank">
+                        <img src="pdfs/edX-LinuxFoundationX-LFS101x-Sertifikası (1).png" alt="Introduction to Linux certificate">
+                    </a>
+                    <figcaption>Introduction to Linux (LFS101x) — Linux Foundation</figcaption>
+                </figure>
+
+                <!--PY0101EN: Python Basics for Data Science-->
+                <figure class="certificate-card">
+                    <a href="https://courses.edx.org/certificates/b5a1259b2f494af180ef019a21db97fb" target="_blank">
+                        <img src="pdfs/Python-Basics-for-Data-Science.png" alt="Python Basics for Data Science certificate">
+                    </a>
+                    <figcaption>Python Basics for Data Science — edX</figcaption>
+                </figure>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section id="downloads" class="downloads section">
+        <div class="container-narrow">
+            <div class="download-card reveal">
+                <div class="download-content">
+                    <h3>Curriculum Vitae</h3>
+                    <p>Full academic + industry history, publications, and references in one PDF.</p>
+                </div>
+                <a href="cv_2025.pdf" class="btn-download" download>
+                    <span>Download CV</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 14L10 4M10 14L6 10M10 14L14 10M4 16H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container-narrow">
+            <span class="section-label">Get in Touch</span>
+            <h2 class="section-title-large">Let's Work Together</h2>
+            
+            <div class="contact-content reveal">
+                <p class="contact-text">
+                    Splitting time between Milan and Istanbul, collaborating globally on ML research, automation, and edge AI deployments.
+                </p>
+
+                <div class="contact-methods">
+                    <a href="mailto:sarpalgan@gmail.com" class="contact-method">
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">sarpalgan@gmail.com</span>
+                    </a>
+                    <a href="tel:+393497058546" class="contact-method">
+                        <span class="contact-label">Phone / WhatsApp</span>
+                        <span class="contact-value">+39 349 705 8546</span>
+                    </a>
+                    <a href="tel:+905344524643" class="contact-method">
+                        <span class="contact-label">Phone (TR)</span>
+                        <span class="contact-value">+90 534 452 4643</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sarp-algan-6ab8201b9/" class="contact-method" target="_blank">
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-value">linkedin.com/in/sarp-algan-6ab8201b9</span>
+                    </a>
+                    <a href="https://github.com/sarpalgan" class="contact-method" target="_blank">
+                        <span class="contact-label">GitHub</span>
+                        <span class="contact-value">github.com/sarpalgan</span>
+                    </a>
+                    <a href="https://sarpalgan.github.io/cv/" class="contact-method" target="_blank">
+                        <span class="contact-label">Portfolio</span>
+                        <span class="contact-value">sarpalgan.github.io/cv</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Sarp Algan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-
 </html>

@@ -1,0 +1,176 @@
+\documentclass[10pt,a4paper]{article}
+
+% Packages for formatting
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[left=0.75in,right=0.75in,top=0.75in,bottom=0.75in]{geometry} % Adjust margins
+\usepackage{xcolor}     % For custom colors
+\usepackage{hyperref}   % For links
+\usepackage{enumitem}   % For compact lists
+\usepackage{helvet}     % Sans-serif font (similar to HTML)
+\usepackage{titlesec}   % For custom section headers
+
+% Set default font family to sans-serif
+\renewcommand{\familydefault}{\sfdefault}
+
+% Define the accent color from the HTML (#b85c4f)
+\definecolor{accentcolor}{HTML}{B85C4F}
+\definecolor{darkgray}{HTML}{1A1A1A}
+\definecolor{lightgray}{HTML}{555555}
+
+% Link formatting
+\hypersetup{
+    colorlinks=true,
+    linkcolor=accentcolor,
+    filecolor=accentcolor,
+    urlcolor=accentcolor,
+    pdftitle={Sarp Algan - CV},
+}
+
+% Custom Section Header Format
+% Matches the "Left Border + Uppercase" style of the HTML
+\titleformat{\section}
+  {\normalfont\large\bfseries\color{accentcolor}} % Format
+  {} % Label
+  {0em} % Sep
+  {\vrule width 3pt\hspace{0.5em}\MakeUppercase} % Before code
+
+% Adjust spacing around sections
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+% Remove paragraph indentation
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+% --- HEADER ---
+\noindent % Paragraf girintisini engeller
+\begin{minipage}[c]{0.40\textwidth} % Sayfanın sol %40'ı (İsim ve Ünvan)
+    \raggedright
+    {\Huge \textbf{\color{darkgray} Sarp Algan}} \\[0.3em]
+    {\small \bfseries \color{accentcolor} \MakeUppercase{Full-Stack AI Developer}}
+\end{minipage}%
+\hfill % Araya boşluk koyup diğer bloğu en sağa iter
+\begin{minipage}[c]{0.58\textwidth} % Sayfanın sağ %58'i (İletişim Bilgileri)
+    \raggedleft % İçeriği sağa yaslar
+    {\footnotesize
+    IT: +39 349 705 8546 \quad $\cdot$ \quad TR: +90 534 452 4643 \\
+    Email: \href{mailto:sarpalgan@gmail.com}{sarpalgan@gmail.com} \\
+    Locations: Milan, Italy $\cdot$ Istanbul, Türkiye \\
+    GitHub: \href{https://github.com/sarpalgan}{sarpalgan} $\cdot$ 
+    LinkedIn: \href{https://www.linkedin.com/in/sarp-algan-6ab8201b9/}{sarp-algan} \\
+    Portfolio: \href{https://sarpalgan.github.io/cv/}{sarpalgan.github.io/cv}
+    }
+\end{minipage}
+\vspace{1em} % Header ile gövde arasına biraz boşluk
+
+% --- SUMMARY ---
+\section{Professional Summary}
+\small
+Full-Stack AI Developer specializing in computer vision, real-time anomaly detection, and production-grade machine learning systems. Expert in deploying YOLO, TensorFlow, and OpenCV pipelines on NVIDIA Jetson edge devices, and building scalable React + Tailwind UIs with Supabase backends. Experienced with n8n automations, LLM integrations, RAG systems, prompt engineering, and end-to-end AI product delivery. Proven track record delivering full-stack applications across web, mobile, and edge platforms with Git-driven development practices.
+
+% --- SKILLS ---
+\section{Skills}
+\small
+\noindent \textbf{Machine Learning \& Data Science:} Python, TensorFlow, PyTorch, Scikit-learn, XGBoost, Pandas, NumPy, Jupyter $|$ Model development (supervised/unsupervised/semi-supervised learning), training/validation/testing, deployment $|$ Data preprocessing, statistical analysis, PCA, classification, regression, clustering \\[0.5em]
+
+\noindent \textbf{Computer Vision:} YOLO (detection, segmentation, classification), OpenCV, TensorFlow $|$ Real-time object detection, tracking, anomaly detection $|$ Dataset creation, annotation, validation $|$ Image preprocessing $|$ Hardware selection (camera sensors, lenses, lighting for industrial applications) $|$ Model optimization and fine-tuning \\[0.5em]
+
+\noindent \textbf{AI Automation \& LLMs:} n8n workflow orchestration, chatbot development $|$ LLM integrations (OpenAI API), prompt engineering, embeddings $|$ Retrieval-augmented generation (RAG), document classification $|$ Automated report generation (PDF/DOCX), email automation \\[0.5em]
+
+\noindent \textbf{Full-Stack Development:} React, TypeScript, JavaScript, Tailwind CSS $|$ Frontend architecture, component systems, responsive UI/UX $|$ Backend development (API design, authentication, CRUD operations) $|$ Supabase (PostgreSQL, Auth, RLS, Edge Functions) $|$ REST/WebSocket integrations $|$ Full-stack web applications with AI model integration \\[0.5em]
+
+\noindent \textbf{Edge AI \& Hardware:} NVIDIA Jetson (setup, optimization, production deployment), Embedded Linux, CUDA $|$ On-device inferencing, real-time low-latency pipelines $|$ Model quantization, pruning, optimization for edge devices $|$ Sensor calibration, GPU acceleration \\[0.5em]
+
+\noindent \textbf{Tools \& DevOps:} Git/GitHub (version control, workflows, code review), Docker, Linux/Bash, CI/CD pipelines $|$ VSCode, Postman, Figma
+
+% --- EXPERIENCE ---
+\section{Professional Experience}
+
+% Egemen Yazılım
+\noindent \textbf{Machine Learning Engineer — Egemen Yazılım} \hfill {\color{lightgray}\footnotesize 07/2022 – Present} \\
+{\footnotesize Istanbul, Türkiye}
+\begin{itemize}[leftmargin=*, nosep, topsep=2pt]
+    \item \textbf{Lead Times Prediction System (TÜBİTAK** 1501 R\&D Program – Finalized):} Developed ML models using Random Forest, SVM, and MLP with extensive data preprocessing (Z-score normalization, feature engineering) to optimize textile manufacturing lead times.
+    \item \textbf{Fabric Defect Detection System (TÜBİTAK** 1501 R\&D Program – Application Stage):} Engineered end-to-end computer vision pipeline with YOLO/TensorFlow/OpenCV for real-time fabric anomaly detection; built dataset pipelines (collection, annotation, validation, augmentation); optimized and deployed models on NVIDIA Jetson devices for low-latency edge inference; selected camera, lens, and lighting hardware for industrial imaging.
+\end{itemize}
+{\scriptsize \color{lightgray} ** TÜBİTAK: Turkish Scientific and Technological Research Council (industrial R\&D funding agency).} \vspace{0.8em}
+
+% PC CUBE
+\noindent \textbf{Machine Learning Engineer — PC CUBE} \hfill {\color{lightgray}\footnotesize 08/04/2024 – 16/02/2025} \\
+{\footnotesize Rome, Italy — Remote}
+\begin{itemize}[leftmargin=*, nosep, topsep=2pt]
+    \item Built a multilingual (Italian \& English) RAG-based document chatbot microservice using BM25, transformer embeddings, vector databases, Apache Artemis, and LLMs.
+    \item Developed zero-shot and few-shot document classification systems using RoBERTa and keyword-extraction techniques for multilingual document handling.
+    \item Automated generation of JUnit tests, integration tests, and JavaDoc by integrating advanced LLM prompting techniques within CI/CD pipelines.
+    \item Implemented a time-prediction model for project completion using XGBoost and deep learning techniques to support project managers and stakeholders.
+\end{itemize}
+\pagebreak % BURADAN SONRASI YENİ SAYFADA BAŞLAYACAK
+
+% Labomak Makine
+\noindent \textbf{Research and Development Engineer — Labomak Makine} \hfill {\color{lightgray}\footnotesize 01/12/2021 – 30/06/2022} \\
+{\footnotesize Istanbul, Türkiye} \\
+\textit{\footnotesize Labomak CRM — B2B Quote Management Platform}
+\begin{itemize}[leftmargin=*, nosep, topsep=2pt]
+    \item Full-stack product development for a modern B2B quotation and CRM system designed for sales teams to generate company-branded proposals.
+    \item \textbf{Tech Stack:} React, TypeScript, Vite, Tailwind CSS, Supabase (PostgreSQL, Auth, RLS, Storage), Capacitor, Electron, jsPDF, html2canvas.
+    \item \textbf{Key contributions:} Architected frontend systems (component library, responsive UI, PDF proposal generation); built Supabase backend (Auth, RLS, real-time subscriptions, migrations); implemented RBAC and per-user data isolation; shipped Android and Windows builds via Capacitor and Electron; added drag-and-drop product selection, form persistence, and dark/light themes.
+    \item \textbf{Demo available upon request.}
+\end{itemize} \vspace{0.8em}
+
+% Quantum ML Intern
+\noindent \textbf{Quantum Machine Learning Researcher (Intern) — METU IVMER} \hfill {\color{lightgray}\footnotesize 01/03/2021 – 31/12/2021} \\
+{\footnotesize Ankara, Türkiye}
+\begin{itemize}[leftmargin=*, nosep, topsep=2pt]
+    \item Led the Quantum Machine Learning research group.
+    \item Delivered lectures on QML to junior researchers.
+    \item Performed scientific research and contributed to academic publications.
+\end{itemize} \vspace{0.8em}
+
+% TAEK Intern
+\noindent \textbf{Research Physicist (Intern) — Turkish Atomic Energy Authority} \hfill {\color{lightgray}\footnotesize 01/11/2021 – 01/12/2021} \\
+{\footnotesize Ankara, Türkiye}
+\begin{itemize}[leftmargin=*, nosep, topsep=2pt]
+    \item Conducted research on particle accelerators and related experimental systems.
+\end{itemize}
+
+% --- EDUCATION ---
+\section{Education}
+
+\noindent \textbf{Master of Science in Artificial Intelligence for Science and Technology} \hfill {\color{lightgray}\footnotesize 2023 – Present} \\
+{\footnotesize University of Milano-Bicocca — Milan, Italy} \vspace{0.5em}
+
+\noindent \textbf{Bachelor of Science in Physics} \hfill {\color{lightgray}\footnotesize 2015 – 2021} \\
+{\footnotesize Middle East Technical University (METU) — Ankara, Türkiye} \\
+{\footnotesize Honor Student (GPA: 3.06 / 4.00) $|$ Thesis: \href{https://drive.google.com/file/d/1KJ9UeTxKpa9qoE0qwRvv9WMsoRDZe4ho/view?usp=sharing}{``Comparison of Classical and Quantum Support Vector Machines for Classification''}}
+
+% --- CERTIFICATIONS ---
+\section{Certifications}
+\begin{itemize}[leftmargin=*, nosep]
+    \item \href{https://www.coursera.org/account/accomplishments/certificate/22RWC74X5B8R}{Advanced Computer Vision with TensorFlow} — Coursera
+    \item \href{https://www.coursera.org/account/accomplishments/certificate/243QYJJ84524}{Improving Deep Neural Networks: Hyperparameter Tuning \& Optimization} — Coursera
+    \item \href{https://www.coursera.org/account/accomplishments/certificate/ZBJMNZMNVAK5}{Machine Learning (Andrew Ng)} — Coursera
+    \item \href{https://www.coursera.org/account/accomplishments/certificate/7H66USWK2MX7}{Convolutional Neural Networks} — Coursera
+    \item \href{https://www.coursera.org/account/accomplishments/certificate/AJE9WGNDCAJS}{Unsupervised Learning, Recommenders \& Reinforcement Learning} — Coursera
+    \item \href{https://www.udemy.com/certificate/UC-7e635cc2-6d4c-46b9-af94-ec1db52c5895/}{The Ultimate MySQL Bootcamp} — Udemy
+    \item \href{https://www.udemy.com/certificate/UC-2e2c6264-c1bd-42e8-ab59-5ea03ca38b85/}{Python for Data Science and Machine Learning Bootcamp} — Udemy
+    \item \href{https://courses.edx.org/certificates/aca2ca8f5de04bdf98dcee5de426bde7}{Introduction to Linux} — edX (Linux Foundation)
+    \item \href{https://courses.edx.org/certificates/b5a1259b2f494af180ef019a21db97fb}{Python Basics for Data Science} — edX
+\end{itemize}
+
+% --- PUBLICATIONS ---
+\section{Publications \& Presentations}
+\begin{itemize}[leftmargin=*, nosep]
+    \item \textbf{\href{https://drive.google.com/file/d/1Xp5ENJrPU64CjBpAeHCWCn6e2miuz-Sr/view?usp=drive_link}{``Comparison of Classical and Quantum Support Vector Machines for Classification''}} — Poster presentation at Turkish Physical Society 37th International Physics Congress. \\
+    {\footnotesize \color{lightgray} Authors: Sarp Algan, Cenk Tüysüz, M. Bilge Demirköz $|$ Institution: Middle East Technical University, Department of Physics — IVMER}
+\end{itemize}
+
+% --- LANGUAGES ---
+\section{Languages}
+\begin{itemize}[leftmargin=*, nosep]
+    \item English — C1
+    \item Turkish — Native
+    \item Italian — A1
+\end{itemize}
+
+\end{document}
