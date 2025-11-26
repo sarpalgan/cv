@@ -1,394 +1,198 @@
-// ==========================================
-// INTERACTIVE PARTICLE BACKGROUND
-// ==========================================
+gsap.registerPlugin(ScrollTrigger, Draggable);
 
-const canvas = document.getElementById('particlesCanvas');
-const ctx = canvas.getContext('2d');
+document.addEventListener("DOMContentLoaded", () => {
+    // Certifications Slider
+    const certs = document.querySelectorAll('.cert-item');
+    const track = document.querySelector('.cert-track');
+    const wrapper = document.querySelector('.cert-slider-wrapper');
 
-let particles = [];
-let mouseX = 0;
-let mouseY = 0;
-let isMouseInHero = false;
-
-function initCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-
-class Particle {
-    constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 3 + 1;
-        this.speedX = Math.random() * 0.5 - 0.25;
-        this.speedY = Math.random() * 0.5 - 0.25;
-        this.opacity = Math.random() * 0.5 + 0.2;
-    }
-
-    update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-
-        // Mouse interaction
-        if (isMouseInHero) {
-            const dx = mouseX - this.x;
-            const dy = mouseY - this.y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
+    if (certs.length > 0 && track && wrapper) {
+        
+        // Helper to get current dimensions
+        const getDimensions = () => {
+            const trackWidth = track.scrollWidth;
+            const wrapperWidth = wrapper.offsetWidth;
+            const maxScroll = Math.max(0, trackWidth - wrapperWidth);
             
-            if (distance < 150) {
-                const force = (150 - distance) / 150;
-                this.x -= (dx / distance) * force * 2;
-                this.y -= (dy / distance) * force * 2;
-            }
-        }
-
-        // Wrap around screen
-        if (this.x > canvas.width) this.x = 0;
-        if (this.x < 0) this.x = canvas.width;
-        if (this.y > canvas.height) this.y = 0;
-        if (this.y < 0) this.y = canvas.height;
-    }
-
-    draw() {
-        ctx.fillStyle = `rgba(184, 92, 79, ${this.opacity})`;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-    }
-}
-
-function createParticles() {
-    particles = [];
-    const numberOfParticles = Math.floor((canvas.width * canvas.height) / 15000);
-    for (let i = 0; i < numberOfParticles; i++) {
-        particles.push(new Particle());
-    }
-}
-
-function connectParticles() {
-    for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-            const dx = particles[i].x - particles[j].x;
-            const dy = particles[i].y - particles[j].y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-
-            if (distance < 100) {
-                ctx.strokeStyle = `rgba(184, 92, 79, ${0.15 * (1 - distance / 100)})`;
-                ctx.lineWidth = 1;
-                ctx.beginPath();
-                ctx.moveTo(particles[i].x, particles[i].y);
-                ctx.lineTo(particles[j].x, particles[j].y);
-                ctx.stroke();
-            }
-        }
-    }
-}
-
-function animateParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    particles.forEach(particle => {
-        particle.update();
-        particle.draw();
-    });
-    
-    connectParticles();
-    requestAnimationFrame(animateParticles);
-}
-
-// Initialize
-initCanvas();
-createParticles();
-animateParticles();
-
-// Mouse tracking
-const heroSection = document.getElementById('hero');
-
-heroSection.addEventListener('mousemove', (e) => {
-    const rect = heroSection.getBoundingClientRect();
-    mouseX = e.clientX;
-    mouseY = e.clientY - rect.top;
-    isMouseInHero = true;
-});
-
-heroSection.addEventListener('mouseleave', () => {
-    isMouseInHero = false;
-});
-
-// Resize handler
-window.addEventListener('resize', () => {
-    initCanvas();
-    createParticles();
-});
-
-// ==========================================
-// SMOOTH SCROLL REVEAL ANIMATIONS
-// ==========================================
-
-const observerOptions = {
-    threshold: 0.15,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-        }
-    });
-}, observerOptions);
-
-// Observe all reveal elements
-document.addEventListener('DOMContentLoaded', () => {
-    const revealElements = document.querySelectorAll('.reveal, .reveal-delay, .reveal-delay-2');
-    revealElements.forEach(el => observer.observe(el));
-});
-
-// ==========================================
-// PARALLAX SCROLLING EFFECT
-// ==========================================
-
-let lastScrollTop = 0;
-const parallaxElements = document.querySelectorAll('.project-image');
-
-window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    parallaxElements.forEach((element, index) => {
-        const rect = element.getBoundingClientRect();
-        const elementTop = rect.top;
-        const elementHeight = rect.height;
-        
-        // Only apply parallax when element is in viewport
-        if (elementTop < window.innerHeight && elementTop + elementHeight > 0) {
-            const scrollPercent = (window.innerHeight - elementTop) / (window.innerHeight + elementHeight);
-            const parallaxValue = scrollPercent * 30; // Adjust for stronger/weaker effect
+            const itemWidth = certs.length > 1 
+                ? certs[1].offsetLeft - certs[0].offsetLeft 
+                : certs[0].offsetWidth + 32;
             
-            element.style.transform = `translateY(${parallaxValue}px)`;
-        }
-    });
-    
-    lastScrollTop = scrollTop;
-}, { passive: true });
+            return { maxScroll, itemWidth };
+        };
 
-// ==========================================
-// NAVIGATION BACKGROUND ON SCROLL
-// ==========================================
+        // State
+        let currentTween = null;
+        let isPaused = false;
+        const speed = 50; // px per second
 
-const nav = document.querySelector('.nav');
-let lastScroll = 0;
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
-        nav.style.background = 'rgba(245, 245, 240, 0.95)';
-        nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
-    } else {
-        nav.style.background = 'rgba(245, 245, 240, 0.8)';
-        nav.style.boxShadow = 'none';
-    }
-    
-    lastScroll = currentScroll;
-}, { passive: true });
-
-// ==========================================
-// SMOOTH ANCHOR SCROLLING
-// ==========================================
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        
-        // Don't prevent default for empty hash or just '#'
-        if (href === '#' || href === '') return;
-        
-        e.preventDefault();
-        
-        const target = document.querySelector(href);
-        if (target) {
-            const navHeight = nav.offsetHeight;
-            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+        // Animation Functions
+        const animateTo = (targetX, delay = 0) => {
+            if (currentTween) currentTween.kill();
             
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
+            const currentX = gsap.getProperty(track, "x");
+            const distance = Math.abs(targetX - currentX);
+            const duration = distance / speed;
+
+            currentTween = gsap.to(track, {
+                x: targetX,
+                duration: duration,
+                ease: "none",
+                delay: delay,
+                onComplete: () => {
+                    // Determine next direction based on where we are
+                    const { maxScroll } = getDimensions();
+                    // If we are at the end (-maxScroll), go to 0
+                    // If we are at 0, go to -maxScroll
+                    // Use a small epsilon for float comparison
+                    if (Math.abs(targetX - (-maxScroll)) < 1) {
+                        animateTo(0, 2); // Wait 2s then go right
+                    } else {
+                        animateTo(-maxScroll, 2); // Wait 2s then go left
+                    }
+                }
             });
+        };
+
+        // Start initial animation
+        const { maxScroll } = getDimensions();
+        if (maxScroll > 0) {
+            animateTo(-maxScroll, 0);
         }
-    });
-});
 
-// ==========================================
-// CURSOR FOLLOW EFFECT (OPTIONAL)
-// ==========================================
-
-const cursor = document.createElement('div');
-cursor.className = 'custom-cursor';
-cursor.style.cssText = `
-    width: 40px;
-    height: 40px;
-    border: 2px solid var(--color-accent);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 0;
-    transform: translate(-50%, -50%);
-    mix-blend-mode: difference;
-`;
-
-// Only add cursor effect on desktop devices
-if (window.innerWidth > 1024) {
-    document.body.appendChild(cursor);
-    
-    let mouseX = 0, mouseY = 0;
-    let cursorX = 0, cursorY = 0;
-    
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        cursor.style.opacity = '0.5';
-    });
-    
-    document.addEventListener('mouseleave', () => {
-        cursor.style.opacity = '0';
-    });
-    
-    // Smooth cursor follow
-    function animateCursor() {
-        cursorX += (mouseX - cursorX) * 0.15;
-        cursorY += (mouseY - cursorY) * 0.15;
+        // Hover Logic
+        const pause = () => {
+            isPaused = true;
+            if (currentTween) currentTween.pause();
+        };
         
-        cursor.style.left = cursorX + 'px';
-        cursor.style.top = cursorY + 'px';
-        
-        requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
-    
-    // Expand cursor on hover over interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, .btn-primary, .btn-secondary, .project-image');
-    
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursor.style.width = '60px';
-            cursor.style.height = '60px';
-            cursor.style.opacity = '0.8';
-        });
-        
-        el.addEventListener('mouseleave', () => {
-            cursor.style.width = '40px';
-            cursor.style.height = '40px';
-            cursor.style.opacity = '0.5';
-        });
-    });
-}
+        const play = () => {
+            isPaused = false;
+            if (currentTween) currentTween.play();
+        };
 
-// ==========================================
-// PROJECT HOVER EFFECT
-// ==========================================
+        track.addEventListener('mouseenter', pause);
+        track.addEventListener('mouseleave', play);
 
-const projects = document.querySelectorAll('.project');
+        // Manual Interaction (Buttons & Drag)
+        const handleManualInteraction = () => {
+            // Kill current auto-scroll
+            if (currentTween) {
+                currentTween.kill();
+                currentTween = null;
+            }
+        };
 
-projects.forEach(project => {
-    const image = project.querySelector('.project-image .image-placeholder');
-    
-    project.addEventListener('mouseenter', () => {
-        if (window.innerWidth > 1024) {
-            image.style.transform = 'scale(1.05) translateY(-5px)';
-        }
-    });
-    
-    project.addEventListener('mouseleave', () => {
-        image.style.transform = 'scale(1) translateY(0)';
-    });
-});
+        const resumeAutoScroll = () => {
+            if (isPaused) return; // Don't resume if mouse is still hovering
+            
+            const { maxScroll } = getDimensions();
+            const currentX = gsap.getProperty(track, "x");
+            
+            // Decide which way to go. 
+            // Simple logic: continue towards the furthest edge? 
+            // Or just default to going left (towards -maxScroll) unless we are already there?
+            
+            if (Math.abs(currentX - (-maxScroll)) < 1) {
+                animateTo(0, 2);
+            } else {
+                // Go towards end
+                animateTo(-maxScroll, 0); // No delay when resuming from manual move? Or maybe small delay?
+            }
+        };
 
-// ==========================================
-// SKILLS CARD STAGGER ANIMATION
-// ==========================================
-
-const skillCards = document.querySelectorAll('.skill-category');
-const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-            setTimeout(() => {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }, index * 100);
-        }
-    });
-}, { threshold: 0.2 });
-
-skillCards.forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-    skillObserver.observe(card);
-});
-
-// ==========================================
-// TEXT GRADIENT EFFECT ON HERO (OPTIONAL)
-// ==========================================
-
-const heroTitle = document.querySelector('.hero-title');
-if (heroTitle) {
-    heroTitle.style.background = 'linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-accent) 100%)';
-    heroTitle.style.webkitBackgroundClip = 'text';
-    heroTitle.style.webkitTextFillColor = 'transparent';
-    heroTitle.style.backgroundClip = 'text';
-}
-
-// ==========================================
-// SCROLL PROGRESS INDICATOR (OPTIONAL)
-// ==========================================
-
-const progressBar = document.createElement('div');
-progressBar.style.cssText = `
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 3px;
-    background: var(--color-accent);
-    z-index: 10000;
-    transition: width 0.1s cubic-bezier(0.4, 0, 0.2, 1);
-    width: 0%;
-`;
-document.body.appendChild(progressBar);
-
-window.addEventListener('scroll', () => {
-    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (window.pageYOffset / windowHeight) * 100;
-    progressBar.style.width = scrolled + '%';
-}, { passive: true });
-
-// ==========================================
-// LAZY LOADING FOR IMAGES (When you add real images)
-// ==========================================
-
-// Uncomment this when you have real images
-/*
-if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.add('loaded');
-                imageObserver.unobserve(img);
+        // Draggable
+        Draggable.create(track, {
+            type: "x",
+            bounds: wrapper,
+            inertia: true,
+            onPress: handleManualInteraction,
+            onDragEnd: resumeAutoScroll, // Resume after drag
+            onDragStart: function() {
+                this.applyBounds(wrapper);
             }
         });
+
+        // Buttons
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+
+        const moveManual = (direction) => {
+            handleManualInteraction();
+            
+            const currentX = gsap.getProperty(track, "x");
+            const { maxScroll: currentMax, itemWidth: currentItemWidth } = getDimensions();
+            
+            let targetX = currentX + (direction * currentItemWidth);
+            targetX = Math.max(Math.min(targetX, 0), -currentMax);
+
+            gsap.to(track, {
+                x: targetX,
+                duration: 0.4,
+                ease: "power2.out",
+                onComplete: resumeAutoScroll // Resume after button click animation
+            });
+        };
+
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => moveManual(1)); 
+            nextBtn.addEventListener('click', () => moveManual(-1)); 
+        }
+        
+        // Resize handling
+        window.addEventListener('resize', () => {
+             const draggable = Draggable.get(track);
+             if (draggable) draggable.applyBounds(wrapper);
+             // Ideally we should also update the current animation target if maxScroll changed
+        });
+    }
+
+    // Custom Cursor Logic
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-outline');
+
+    if (cursorDot && cursorOutline) {
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
+    }
+
+    // 3D Tilt Effect for Skill Cards
+    const skillCards = document.querySelectorAll('.skill-card');
+    skillCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = ((y - centerY) / centerY) * -10; // Max 10deg rotation
+            const rotateY = ((x - centerX) / centerX) * 10;
+
+            gsap.to(card, {
+                transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`,
+                duration: 0.1,
+                ease: "none"
+            });
+        });
+
+        card.addEventListener('mouseleave', () => {
+            gsap.to(card, {
+                transform: `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`,
+                duration: 0.5,
+                ease: "power2.out"
+            });
+        });
     });
-
-    const images = document.querySelectorAll('img[data-src]');
-    images.forEach(img => imageObserver.observe(img));
-}
-*/
-
-// ==========================================
-// CONSOLE MESSAGE
-// ==========================================
-
-console.log('%c👋 Welcome to my portfolio!', 'font-size: 16px; color: #B85C4F; font-weight: bold;');
-console.log('%cBuilt with care and attention to detail.', 'font-size: 12px; color: #6B6B6B;');
+});
